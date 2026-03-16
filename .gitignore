@@ -1,0 +1,39 @@
+# Claude Code local settings
+.claude/
+
+# Python virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Generated data files (re-generate with generate_data.py)
+00_raw/data/*.json
+00_raw/data/*.csv
+
+# SQLite databases (re-generate by running pipeline)
+*.db
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
