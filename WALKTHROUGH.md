@@ -473,25 +473,104 @@ sqlite3 ../04_gold/gold.db "
 
 ---
 
-## Phase 6: Integration (Coming Later)
+## Phase 6: Integration
 
 > **Folder:** `scripts/`
 > **Goal:** Orchestrate the full pipeline with validation
 
 ### The Story
 
-Running SQL files manually doesn't scale. The integration layer provides:
-- `run_all.py` - Execute the entire pipeline with one command
+Running SQL files manually doesn't scale. When you have 15 SQL files across 5 layers, you need automation. The integration layer provides the "one command to rule them all" experience:
+
+- `run_all.py` - Execute the entire pipeline
 - `validate.py` - Cross-layer integrity checks
 - `reset.py` - Clean slate for re-running
 
+This is also where we ensure **idempotency**—you can run the pipeline multiple times and get the same result.
+
 ### What You'll Learn
 
-1. **Pipeline orchestration** - Dependency ordering
-2. **Cross-layer validation** - Row count reconciliation
+1. **Pipeline orchestration** - Running layers in the correct order
+2. **Cross-layer validation** - Ensuring data flows correctly between layers
 3. **Idempotent execution** - Safe to re-run anytime
+4. **Error handling** - Failing fast when something goes wrong
 
-*Implementation coming in Phase 6...*
+### The Scripts
+
+```
+scripts/
+├── utils.py      # Shared utilities (paths, connections, logging)
+├── run_all.py    # Pipeline orchestration
+├── validate.py   # Cross-layer validation
+└── reset.py      # Clean slate reset
+```
+
+### Validation Checks
+
+The `validate.py` script performs 17 checks across all layers:
+
+```
+Bronze -> Silver
+  - No duplicates in silver
+  - Rejected records logged
+
+Silver -> Gold
+  - Row counts match
+  - No orphan FK references (listener, track, device, date)
+
+Aggregates
+  - agg_daily_listener_streams reconciles with fact_streams
+  - agg_daily_track_streams reconciles
+  - agg_monthly_genre_streams reconciles
+
+Date Dimension
+  - 365 days coverage
+  - All fact dates have dimension entries
+
+Serving
+  - All 15 views exist
+  - All views contain data
+```
+
+### Explore It Yourself
+
+```bash
+# Run the entire pipeline from scratch
+python scripts/run_all.py
+
+# Check everything is correct
+python scripts/validate.py
+
+# Start fresh
+python scripts/reset.py --dry-run  # See what would be deleted
+python scripts/reset.py            # Actually delete
+
+# Run just part of the pipeline
+python scripts/run_all.py --from silver --to gold
+```
+
+**Sample Validation Output:**
+```
+CROSS-LAYER VALIDATION
+============================================================
+  PASS: Bronze database exists (18.18 MB)
+  PASS: Silver database exists (31.43 MB)
+  PASS: Gold database exists (21.61 MB)
+  PASS: No duplicates in silver.streams
+  PASS: Stream counts match (99,493)
+  PASS: All 15 serving views exist
+
+VALIDATION SUMMARY
+  Passed:   17
+  Failed:   0
+  Warnings: 0
+
+ALL VALIDATIONS PASSED
+```
+
+**Question to ponder:** Why is idempotency important in data pipelines? What happens if a pipeline fails halfway through?
+
+> **Deep dive:** See `scripts/README.md` for complete usage documentation.
 
 ---
 

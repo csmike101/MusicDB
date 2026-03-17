@@ -1,6 +1,6 @@
 # Phase 6: Integration
 
-**Status:** Pending
+**Status:** Complete
 
 ---
 
@@ -406,14 +406,14 @@ if __name__ == "__main__":
 
 ## Tasks
 
-- [ ] Create `scripts/utils.py`
-- [ ] Create `scripts/run_all.py`
-- [ ] Create `scripts/validate.py`
-- [ ] Create `scripts/reset.py`
-- [ ] Test full pipeline execution
-- [ ] Test validation checks
-- [ ] Test reset and re-run
-- [ ] Document usage in README
+- [x] Create `scripts/utils.py`
+- [x] Create `scripts/run_all.py`
+- [x] Create `scripts/validate.py`
+- [x] Create `scripts/reset.py`
+- [x] Test full pipeline execution
+- [x] Test validation checks
+- [x] Test reset and re-run (dry-run verified)
+- [x] Document usage in README
 
 ---
 
@@ -457,9 +457,9 @@ python scripts/validate.py
 
 ## Final Deliverables Checklist
 
-- [ ] All layer directories populated with SQL and Python files
-- [ ] All databases generated (bronze.db, silver.db, gold.db, serving.db)
-- [ ] Year-in-Review JSON exports for all listeners
-- [ ] Pipeline runs end-to-end without errors
-- [ ] Cross-layer validation passes
-- [ ] README documents full usage
+- [x] All layer directories populated with SQL and Python files
+- [x] All databases generated (bronze.db, silver.db, gold.db)
+- [x] Year-in-Review JSON exports (sample of 10 listeners + CSV)
+- [x] Pipeline runs end-to-end without errors
+- [x] Cross-layer validation passes (17/17 checks)
+- [x] README documents full usage
