@@ -25,6 +25,12 @@ build/
 # SQLite databases (re-generate by running pipeline)
 *.db
 
+# Generated reports (keep sample reports, ignore new ones)
+# Note: Initial sample reports are committed for demonstration
+05_serving/reports/*.json
+05_serving/reports/*.csv
+!05_serving/reports/.gitkeep
+
 # IDE settings
 .vscode/
 .idea/
