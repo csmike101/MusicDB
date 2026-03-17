@@ -14,8 +14,8 @@ A tutorial-style workbook demonstrating **medallion architecture** (Raw → Bron
 |-------|------|--------|---------|
 | 1 | Foundation | ✅ Complete | [plans/01_foundation.md](./plans/01_foundation.md) |
 | 2 | Raw Layer | ✅ Complete | [plans/02_raw_layer.md](./plans/02_raw_layer.md) |
-| 3 | Bronze Layer | 🔲 Next | [plans/03_bronze_layer.md](./plans/03_bronze_layer.md) |
-| 4 | Silver Layer | 🔲 Pending | [plans/04_silver_layer.md](./plans/04_silver_layer.md) |
+| 3 | Bronze Layer | ✅ Complete | [plans/03_bronze_layer.md](./plans/03_bronze_layer.md) |
+| 4 | Silver Layer | 🔲 Next | [plans/04_silver_layer.md](./plans/04_silver_layer.md) |
 | 5 | Gold Layer | 🔲 Pending | [plans/05_gold_layer.md](./plans/05_gold_layer.md) |
 | 6 | Serving Layer | 🔲 Pending | [plans/06_serving_layer.md](./plans/06_serving_layer.md) |
 | 7 | Integration | 🔲 Pending | [plans/07_integration.md](./plans/07_integration.md) |

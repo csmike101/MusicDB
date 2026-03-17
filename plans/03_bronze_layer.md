@@ -1,6 +1,6 @@
 # Phase 3: Bronze Layer
 
-**Status:** Next
+**Status:** Complete
 
 ---
 
@@ -166,12 +166,12 @@ if __name__ == "__main__":
 
 ## Tasks
 
-- [ ] Create `01_bronze/01_create_tables.sql`
-- [ ] Create `01_bronze/02_load_data.py`
-- [ ] Run DDL to create tables
-- [ ] Load all raw files into bronze tables
-- [ ] Verify row counts match raw data
-- [ ] Verify audit columns populated correctly
+- [x] Create `01_bronze/01_create_tables.sql`
+- [x] Create `01_bronze/02_load_data.py`
+- [x] Run DDL to create tables
+- [x] Load all raw files into bronze tables
+- [x] Verify row counts match raw data
+- [x] Verify audit columns populated correctly
 
 ---
 
@@ -205,10 +205,10 @@ HAVING COUNT(*) > 1
 LIMIT 10;
 ```
 
-### Expected Results
-| Table | Expected Rows |
-|-------|---------------|
-| bronze_listeners | ~50 |
-| bronze_artists | ~100 |
-| bronze_tracks | ~1000 |
-| bronze_streams | ~100k (includes ~1% duplicates) |
+### Actual Results
+| Table | Rows | Notes |
+|-------|------|-------|
+| bronze_listeners | 50 | All loaded |
+| bronze_artists | 100 | All loaded |
+| bronze_tracks | 1,000 | All loaded |
+| bronze_streams | 100,999 | Includes 999 duplicates (detectable via _row_hash) |
