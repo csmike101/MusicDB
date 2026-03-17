@@ -15,8 +15,8 @@ A tutorial-style workbook demonstrating **medallion architecture** (Raw → Bron
 | 0 | Foundation | ✅ Complete | [plans/00_foundation.md](./plans/00_foundation.md) |
 | 1 | Raw Layer | ✅ Complete | [plans/01_raw_layer.md](./plans/01_raw_layer.md) |
 | 2 | Bronze Layer | ✅ Complete | [plans/02_bronze_layer.md](./plans/02_bronze_layer.md) |
-| 3 | Silver Layer | 🔲 Next | [plans/03_silver_layer.md](./plans/03_silver_layer.md) |
-| 4 | Gold Layer | 🔲 Pending | [plans/04_gold_layer.md](./plans/04_gold_layer.md) |
+| 3 | Silver Layer | ✅ Complete | [plans/03_silver_layer.md](./plans/03_silver_layer.md) |
+| 4 | Gold Layer | 🔲 Next | [plans/04_gold_layer.md](./plans/04_gold_layer.md) |
 | 5 | Serving Layer | 🔲 Pending | [plans/05_serving_layer.md](./plans/05_serving_layer.md) |
 | 6 | Integration | 🔲 Pending | [plans/06_integration.md](./plans/06_integration.md) |
 
@@ -61,7 +61,7 @@ Data generator with ~50 listeners, ~100 artists, ~1000 tracks, ~100k streams. In
 ### Phase 2: Bronze Layer ✅
 Staging tables with TEXT columns, audit columns (_source_file, _loaded_at, _row_hash), no constraints.
 
-### Phase 3: Silver Layer (Next)
+### Phase 3: Silver Layer ✅
 3NF schema with proper types, constraints, deduplication, genre normalization, FK validation.
 
 ### Phase 4: Gold Layer

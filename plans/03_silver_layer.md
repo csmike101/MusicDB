@@ -1,6 +1,6 @@
 # Phase 3: Silver Layer
 
-**Status:** Pending
+**Status:** Complete
 
 ---
 
@@ -206,14 +206,14 @@ CREATE TABLE silver_rejected_records (
 
 ## Tasks
 
-- [ ] Create `03_silver/01_create_tables.sql`
-- [ ] Create `03_silver/02_transform_data.sql`
-- [ ] Create `03_silver/03_create_indexes.sql`
-- [ ] Run DDL to create tables
-- [ ] Execute transformations
-- [ ] Create indexes
-- [ ] Verify data quality improvements
-- [ ] Review rejected records
+- [x] Create `03_silver/01_create_tables.sql`
+- [x] Create `03_silver/02_transform_data.sql`
+- [x] Create `03_silver/03_create_indexes.sql`
+- [x] Run DDL to create tables
+- [x] Execute transformations
+- [x] Create indexes
+- [x] Verify data quality improvements
+- [x] Review rejected records
 
 ---
 
@@ -248,10 +248,12 @@ FROM silver_rejected_records
 GROUP BY source_table, rejection_reason;
 ```
 
-### Expected Results
+### Actual Results
 | Table | Bronze Rows | Silver Rows | Difference |
 |-------|-------------|-------------|------------|
-| listeners | ~50 | ~50 | 0 (no issues) |
-| artists | ~100 | ~100 | 0 (no issues) |
-| tracks | ~1000 | ~995 | ~5 (invalid artists) |
-| streams | ~100k | ~98.5k | ~1.5k (dupes + bad FKs) |
+| listeners | 50 | 50 | 0 (no issues) |
+| artists | 100 | 100 | 0 (no issues) |
+| tracks | 1,000 | 1,000 | 0 (all artist FKs valid) |
+| streams | 100,999 | 99,493 | -1,506 (dupes + invalid track FKs) |
+
+**Rejected Records:** 507 streams with invalid track_id references (trk_1001-trk_1100)
