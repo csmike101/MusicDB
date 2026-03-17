@@ -197,6 +197,110 @@ GROUP BY source_table;
 5. **Deduplication** - Removing exact duplicate records
 6. **Audit trail** - Rejected records logged with reasons
 
+## Real-World Analogies
+
+**Silver = Quality Control on a Production Line**
+
+Imagine a car factory. Raw materials (Bronze) arrive from suppliers. Before assembly, Quality Control (Silver) checks each part:
+- Is it the right size? (type validation)
+- Is it the correct part? (FK validation)
+- Is it a duplicate shipment? (deduplication)
+
+Defective parts don't disappear—they go to a rejection bin with a tag explaining why (rejected records table). This lets you trace issues back to the supplier.
+
+**Deduplication = Removing Photocopies**
+
+If someone accidentally photocopied a document and put both copies in the filing cabinet, you'd want to remove the duplicate. But you need to decide *which* copy to keep. We keep the first one (by `_loaded_at` timestamp), just like you'd keep the original.
+
+## Common Mistakes to Avoid
+
+**1. Silently dropping bad data**
+```sql
+-- BAD: Where did these rows go?
+INSERT INTO silver_table SELECT * FROM bronze_table WHERE valid = 1;
+
+-- GOOD: Log what you're rejecting
+INSERT INTO rejected_records SELECT id, 'Invalid data' FROM bronze_table WHERE valid = 0;
+INSERT INTO silver_table SELECT * FROM bronze_table WHERE valid = 1;
+```
+
+**2. Case-sensitive duplicate handling**
+```sql
+-- BAD: These look like duplicates but aren't matched
+WHERE email = 'User@Example.com'  -- won't match 'user@example.com'
+
+-- GOOD: Normalize before comparing
+WHERE LOWER(TRIM(email)) = LOWER(TRIM(other_email))
+```
+
+**3. Assuming dates parse correctly**
+```sql
+-- BAD: SQLite silently returns NULL for unparseable dates
+SELECT DATE('not-a-date');  -- Returns NULL, no error!
+
+-- GOOD: Validate the result
+CASE WHEN DATE(release_date) IS NOT NULL THEN DATE(release_date)
+     ELSE [log error and handle] END
+```
+
+**4. Forgetting to index foreign keys**
+```sql
+-- Silver has FK relationships, but SQLite doesn't auto-index them
+-- Without indexes, JOIN performance degrades badly at scale
+CREATE INDEX idx_streams_track_id ON streams(track_id);
+```
+
+## Exploration Exercises
+
+```sql
+-- 1. Compare genre values before/after normalization
+-- (Attach bronze database first)
+ATTACH '../02_bronze/bronze.db' AS bronze;
+
+SELECT 'bronze' AS layer, genre, COUNT(*)
+FROM bronze.bronze_artists GROUP BY genre
+UNION ALL
+SELECT 'silver', genre, COUNT(*)
+FROM artists GROUP BY genre
+ORDER BY genre;
+
+-- 2. Find the most common rejection reasons
+SELECT rejection_reason, COUNT(*) as count
+FROM silver_rejected_records
+GROUP BY rejection_reason
+ORDER BY count DESC
+LIMIT 10;
+
+-- 3. Verify deduplication worked
+SELECT
+    (SELECT COUNT(*) FROM bronze.bronze_streams) as bronze_count,
+    (SELECT COUNT(*) FROM streams) as silver_count,
+    (SELECT COUNT(*) FROM bronze.bronze_streams) -
+    (SELECT COUNT(*) FROM streams) as removed;
+
+-- 4. Check data type conversions
+SELECT typeof(duration_ms) as type, COUNT(*)
+FROM streams
+GROUP BY typeof(duration_ms);
+-- Should show 'integer' for all rows
+```
+
+## Design Decisions Explained
+
+**Why reject streams with invalid track_ids instead of keeping them?**
+
+A stream without a valid track is meaningless for analytics. "User X listened to [unknown]" doesn't help. We reject these but log them so we can investigate why tracks are missing.
+
+**Why normalize genre casing?**
+
+"Rock" and "rock" are the same genre to humans. If we don't normalize, analytics queries need `LOWER()` everywhere, which is error-prone and slow.
+
+**Why use INTEGER for booleans instead of TEXT 'true'/'false'?**
+
+- Storage: INTEGER uses 1 byte; TEXT 'false' uses 5 bytes
+- Performance: Integer comparison is faster
+- Aggregation: `SUM(shuffle_mode)` counts TRUE values directly
+
 ## Next Steps
 
 After silver data is ready, proceed to **04_gold/** to build the dimensional model (star schema).

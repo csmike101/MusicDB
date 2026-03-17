@@ -135,6 +135,63 @@ Real data pipelines must handle imperfect data. Learning to identify and address
 ### Duration in Milliseconds?
 Streaming APIs typically report duration in milliseconds for precision. This creates a learning opportunity for unit conversion in later layers.
 
+## Real-World Context
+
+In production environments, raw data comes from many sources:
+
+| Source Type | Example | Typical Format | Challenges |
+|-------------|---------|----------------|------------|
+| **Event streams** | Kafka, Kinesis | JSON, Avro | High volume, ordering, duplicates |
+| **API exports** | REST APIs | JSON | Rate limits, pagination, schema changes |
+| **Database dumps** | MySQL, Postgres | CSV, Parquet | Large files, encoding issues |
+| **File uploads** | User submissions | CSV, Excel | Unpredictable quality |
+| **Third-party feeds** | Partner data | Various | No control over format |
+
+Our synthetic generator simulates the challenges you'd face with real sources, just at a smaller scale.
+
+## Common Pitfalls
+
+**1. Assuming data is clean**
+> "The API documentation says this field is required."
+
+Reality: Documentation lies. Always validate.
+
+**2. Ignoring edge cases**
+> "Who would have an empty string for their name?"
+
+Reality: Someone will. Handle it.
+
+**3. Hardcoding formats**
+> "Dates are always YYYY-MM-DD."
+
+Reality: Until they're not. The generator includes date format variations to teach this lesson.
+
+**4. Not tracking data lineage**
+> "Where did this weird value come from?"
+
+Reality: Without audit columns (added in Bronze), you can't trace issues back to their source.
+
+## Exploration Exercises
+
+Try these queries after generating data:
+
+```bash
+# Count records in each file
+wc -l data/streams.csv
+cat data/listeners.json | python -c "import json,sys; print(len(json.load(sys.stdin)))"
+
+# Find duplicate stream IDs
+cut -d',' -f1 data/streams.csv | sort | uniq -d | head -5
+
+# Check genre casing variations
+cat data/artists.json | python -c "
+import json, sys
+data = json.load(sys.stdin)
+genres = set(a['genre'] for a in data)
+print(sorted(genres))
+"
+```
+
 ## Next Steps
 
 After generating raw data, proceed to **02_bronze/** to load it into staging tables.

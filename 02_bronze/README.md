@@ -138,6 +138,61 @@ LIMIT 10;
 4. **Row hashing** - Enable deduplication without losing duplicates
 5. **Idempotent loads** - Can safely re-run the load process
 
+## Real-World Analogies
+
+**Bronze = Your Email Inbox**
+
+Think of bronze like your email inbox. When an email arrives:
+- You don't edit it before it lands (preserve fidelity)
+- You know when it arrived and who sent it (audit columns)
+- Spam sits next to important messages (no filtering)
+- You can always go back and find the original (reprocessing)
+
+**Row Hash = Fingerprints**
+
+The `_row_hash` column is like a fingerprint for each record. Two records with the same fingerprint are identical. This lets us:
+- Detect duplicates efficiently (same hash = duplicate)
+- Track changes over time (different hash = data changed)
+- Verify data integrity (recalculate hash to confirm)
+
+## Common Questions
+
+**Q: Why not just clean the data immediately?**
+
+A: Because you might clean it wrong. Requirements change. Bugs happen. If you've modified the original data, you can't recover. Bronze gives you a "save point" to restart from.
+
+**Q: Isn't storing everything as TEXT wasteful?**
+
+A: Yes, slightly. But storage is cheap; lost data is expensive. At petabyte scale, you might optimize Bronze differently, but the principle remains: preserve first, transform later.
+
+**Q: What if the source file is huge (10GB+)?**
+
+A: Stream it. Don't load the whole file into memory. The `02_load_data.py` script processes CSV row-by-row for this reason. For JSON, you'd use a streaming parser like `ijson`.
+
+**Q: How long should we keep Bronze data?**
+
+A: Depends on your requirements. Some companies keep it forever (compliance). Others keep 90 days (cost). The key is having a policy and sticking to it.
+
+## Exploration Exercises
+
+```sql
+-- 1. How many distinct source files?
+SELECT DISTINCT _source_file FROM bronze_streams;
+
+-- 2. What's the time range of our data?
+SELECT MIN(streamed_at), MAX(streamed_at) FROM bronze_streams;
+
+-- 3. Find streams with suspicious durations (negative or huge)
+SELECT * FROM bronze_streams
+WHERE CAST(duration_played_ms AS INTEGER) < 0
+   OR CAST(duration_played_ms AS INTEGER) > 3600000;  -- > 1 hour
+
+-- 4. Spot check: do JSON booleans come through correctly?
+SELECT DISTINCT shuffle_mode, offline_mode
+FROM bronze_streams
+LIMIT 10;
+```
+
 ## Next Steps
 
 After loading bronze data, proceed to **03_silver/** to clean and normalize.
