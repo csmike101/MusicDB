@@ -107,10 +107,26 @@ After each layer transformation, verify:
 
 ## Development Environment
 
+### Python Virtual Environment (Required)
+
+**Always activate the venv before running any Python scripts.**
+
+```bash
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
+```
+
+The venv must be active when:
+- Running data generation scripts
+- Executing pipeline scripts
+- Installing dependencies
+
+### Other Tools
 - **Git** - Version control; generated files (.db, data/) are gitignored
-- **Python virtual environment** - `venv/` directory, activate before running scripts
-- On Windows: `venv\Scripts\activate`
-- On macOS/Linux: `source venv/bin/activate`
+- **SQLite** - Included with Python standard library
 
 ## Dependencies
 
@@ -119,3 +135,33 @@ After each layer transformation, verify:
 - sqlite3 (standard library)
 
 Install via: `pip install -r requirements.txt`
+
+## Implementation Process
+
+### Phase-by-Phase Workflow
+
+This project is implemented one phase at a time. **Each phase must be reviewed and approved before proceeding to the next.**
+
+| Phase | Plan File | Description |
+|-------|-----------|-------------|
+| 1 | `plans/01_foundation.md` | Project setup |
+| 2 | `plans/02_raw_layer.md` | Data generation |
+| 3 | `plans/03_bronze_layer.md` | Staging tables |
+| 4 | `plans/04_silver_layer.md` | Cleaned & normalized |
+| 5 | `plans/05_gold_layer.md` | Dimensional model |
+| 6 | `plans/06_serving_layer.md` | Analytics views |
+| 7 | `plans/07_integration.md` | Pipeline scripts |
+
+### For Each Phase
+
+1. **Read** the phase plan file for detailed requirements
+2. **Implement** all tasks listed in the plan
+3. **Run verification** queries/checks specified in the plan
+4. **Pause and await user review** before proceeding to the next phase
+
+### Verification Requirements
+
+Each phase includes verification steps. Do not mark a phase complete until:
+- All tasks are implemented
+- All verification queries pass
+- User has reviewed and approved
