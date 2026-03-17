@@ -116,7 +116,20 @@ The final serving layer enables queries like:
 | Artists | ~100 |
 | Tracks | ~1,000 |
 | Streams | ~100,000 |
-| Time Period | 1 year (2025) |
+| Time Period | Full year 2025 |
+
+## Data Quality Challenges
+
+The raw data intentionally includes real-world quality issues for learning:
+
+| Issue | Rate | What You'll Learn |
+|-------|------|-------------------|
+| Duplicate records | ~1% | Deduplication strategies |
+| Null values | ~15-20% | Handling missing data |
+| Inconsistent casing | ~10% | Data standardization |
+| Invalid foreign keys | ~0.5% | Referential integrity |
+| Whitespace issues | ~2% | String cleaning |
+| Date format variations | ~2% | Date parsing |
 
 ## Project Structure
 
@@ -124,16 +137,25 @@ The final serving layer enables queries like:
 data_modeling/
 ├── .gitignore             # Git ignore patterns
 ├── README.md              # This file
-├── CLAUDE.md              # Project context
-├── PLAN.md                # Implementation plan
+├── CLAUDE.md              # Project context for Claude Code
+├── PLAN.md                # Master implementation plan
 ├── requirements.txt       # Python dependencies
 ├── venv/                  # Python virtual environment (not in git)
 │
+├── plans/                 # Detailed phase documentation
+│   ├── 01_foundation.md   # Project setup
+│   ├── 02_raw_layer.md    # Data generation design
+│   ├── 03_bronze_layer.md # Staging layer design
+│   ├── 04_silver_layer.md # Normalization design
+│   ├── 05_gold_layer.md   # Star schema design
+│   ├── 06_serving_layer.md # Analytics queries
+│   └── 07_integration.md  # Pipeline orchestration
+│
 ├── 00_raw/                # Data generation
-├── 01_bronze/             # Raw staging
-├── 02_silver/             # Cleaned & normalized
-├── 03_gold/               # Dimensional model
-├── 04_serving/            # Analytics layer
+├── 01_bronze/             # Raw staging (bronze.db)
+├── 02_silver/             # Cleaned & normalized (silver.db)
+├── 03_gold/               # Dimensional model (gold.db)
+├── 04_serving/            # Analytics layer (serving.db)
 └── scripts/               # Pipeline utilities
 ```
 

@@ -21,13 +21,39 @@ This is a tutorial-style workbook demonstrating **medallion architecture** (Raw 
 
 ## Architecture Layers
 
-| Layer | Purpose | Key Concepts |
-|-------|---------|--------------|
-| **Raw** | Generated source data | JSON, CSV formats; intentional data quality issues |
-| **Bronze** | Staging | All TEXT columns, audit columns, no constraints |
-| **Silver** | Cleaned & normalized | 3NF, proper types, constraints, deduplication |
-| **Gold** | Dimensional model | Star schema, facts, dimensions, aggregates |
-| **Serving** | Analytics-ready | Semantic views, Year-in-Review queries |
+| Layer | Directory | Purpose | Key Concepts |
+|-------|-----------|---------|--------------|
+| **Raw** | `00_raw/` | Generated source data | JSON, CSV formats; intentional data quality issues |
+| **Bronze** | `01_bronze/` | Staging | All TEXT columns, audit columns (_source_file, _loaded_at, _row_hash), no constraints |
+| **Silver** | `02_silver/` | Cleaned & normalized | 3NF, proper types, constraints, deduplication, FK validation |
+| **Gold** | `03_gold/` | Dimensional model | Star schema, facts, dimensions, surrogate keys, aggregates |
+| **Serving** | `04_serving/` | Analytics-ready | Semantic views, Year-in-Review queries, JSON exports |
+
+## Project Structure
+
+```
+data_modeling/
+├── CLAUDE.md              # This file - project context for Claude Code
+├── README.md              # Workbook introduction and learning objectives
+├── PLAN.md                # Master implementation plan
+├── requirements.txt       # Python dependencies
+│
+├── plans/                 # Detailed phase documentation
+│   ├── 01_foundation.md
+│   ├── 02_raw_layer.md
+│   ├── 03_bronze_layer.md
+│   ├── 04_silver_layer.md
+│   ├── 05_gold_layer.md
+│   ├── 06_serving_layer.md
+│   └── 07_integration.md
+│
+├── 00_raw/                # Layer 0: Raw data generation
+├── 01_bronze/             # Layer 1: Staging (bronze.db)
+├── 02_silver/             # Layer 2: Cleaned & normalized (silver.db)
+├── 03_gold/               # Layer 3: Dimensional model (gold.db)
+├── 04_serving/            # Layer 4: Analytics layer (serving.db)
+└── scripts/               # Pipeline utilities (run_all.py, validate.py)
+```
 
 ## Coding Conventions
 
@@ -61,11 +87,15 @@ This is a tutorial-style workbook demonstrating **medallion architecture** (Raw 
 ## Intentional Data Quality Issues (Raw Layer)
 
 For teaching purposes, the generated data includes:
-- Duplicate stream records (~1%)
-- Null values in optional fields (city, album)
-- Inconsistent genre casing ("Rock", "rock", "ROCK")
-- Invalid foreign keys (~0.5% streams reference non-existent tracks)
-- Whitespace issues in string fields
+
+| Issue | Rate | Fields Affected |
+|-------|------|-----------------|
+| Duplicate records | ~1% | streams |
+| Null values | ~15-20% | city, album, formed_year |
+| Inconsistent casing | ~10% | genre |
+| Invalid foreign keys | ~0.5% | track_id in streams |
+| Whitespace issues | ~2% | name fields |
+| Date format variations | ~2% | release_date |
 
 ## Testing & Verification
 
