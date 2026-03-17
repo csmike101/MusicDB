@@ -1,0 +1,255 @@
+{
+  "listener_id": "1de6be50-462f-4551-9c6a-b319ad737a78",
+  "listener_name": "Rachel Flynn",
+  "email": "nolanjason@example.org",
+  "country": "India",
+  "subscription_type": "free",
+  "year": 2025,
+  "generated_at": "2026-03-17T11:35:41.814637",
+  "summary": {
+    "total_streams": 1555,
+    "total_minutes": 5819.0,
+    "total_hours": 97.0,
+    "days_active": 359,
+    "unique_tracks": 795,
+    "unique_artists": 100,
+    "unique_genres": 18,
+    "avg_completion_pct": 80.0,
+    "full_plays": 1093,
+    "full_play_rate": 70.3,
+    "shuffle_pct": 35.4,
+    "offline_pct": 10.5,
+    "listening_percentile": 4.0
+  },
+  "top_artists": [
+    {
+      "artist_rank": 1,
+      "artist_name": "The Levels",
+      "artist_genre": "Folk",
+      "stream_count": 35,
+      "minutes_listened": 137.4
+    },
+    {
+      "artist_rank": 2,
+      "artist_name": "The Boards",
+      "artist_genre": "Country",
+      "stream_count": 35,
+      "minutes_listened": 130.5
+    },
+    {
+      "artist_rank": 3,
+      "artist_name": "The Reachs",
+      "artist_genre": "Classical",
+      "stream_count": 32,
+      "minutes_listened": 128.4
+    },
+    {
+      "artist_rank": 4,
+      "artist_name": "The Networks",
+      "artist_genre": "R&b",
+      "stream_count": 28,
+      "minutes_listened": 124.4
+    },
+    {
+      "artist_rank": 5,
+      "artist_name": "Katherine Miller",
+      "artist_genre": "Blues",
+      "stream_count": 26,
+      "minutes_listened": 119.9
+    }
+  ],
+  "top_tracks": [
+    {
+      "track_rank": 1,
+      "track_title": "Range",
+      "artist_name": "Jennifer Carlson",
+      "album": "Fire Rain",
+      "play_count": 7,
+      "minutes_listened": 24.6
+    },
+    {
+      "track_rank": 2,
+      "track_title": "Nor",
+      "artist_name": "John Peterson",
+      "album": "Wild Roads Fire",
+      "play_count": 6,
+      "minutes_listened": 22.0
+    },
+    {
+      "track_rank": 3,
+      "track_title": "Form line race",
+      "artist_name": "The Reachs",
+      "album": "Skies",
+      "play_count": 6,
+      "minutes_listened": 31.2
+    },
+    {
+      "track_rank": 4,
+      "track_title": "North",
+      "artist_name": "The Finishs",
+      "album": "Return to Mountains",
+      "play_count": 6,
+      "minutes_listened": 23.3
+    },
+    {
+      "track_rank": 5,
+      "track_title": "Choose blood",
+      "artist_name": "The Naturals",
+      "album": "City Waves",
+      "play_count": 5,
+      "minutes_listened": 20.9
+    }
+  ],
+  "top_genre": {
+    "top_genre": "Punk",
+    "stream_count": 148,
+    "minutes_listened": 575.6,
+    "genre_share_pct": 100.0
+  },
+  "listening_personality": {
+    "listening_personality": "Explorer",
+    "total_streams": 1555,
+    "unique_artists": 100,
+    "unique_tracks": 795,
+    "unique_genres": 18,
+    "shuffle_pct": 35.4,
+    "full_play_pct": 70.3
+  },
+  "monthly_trends": [
+    {
+      "month": 1,
+      "month_name": "January",
+      "streams": 128,
+      "unique_tracks": 118,
+      "unique_artists": 67,
+      "minutes_listened": 451.6,
+      "hours_listened": 7.5
+    },
+    {
+      "month": 2,
+      "month_name": "February",
+      "streams": 110,
+      "unique_tracks": 102,
+      "unique_artists": 60,
+      "minutes_listened": 400.5,
+      "hours_listened": 6.7
+    },
+    {
+      "month": 3,
+      "month_name": "March",
+      "streams": 132,
+      "unique_tracks": 123,
+      "unique_artists": 71,
+      "minutes_listened": 536.8,
+      "hours_listened": 8.9
+    },
+    {
+      "month": 4,
+      "month_name": "April",
+      "streams": 116,
+      "unique_tracks": 113,
+      "unique_artists": 70,
+      "minutes_listened": 450.0,
+      "hours_listened": 7.5
+    },
+    {
+      "month": 5,
+      "month_name": "May",
+      "streams": 122,
+      "unique_tracks": 115,
+      "unique_artists": 67,
+      "minutes_listened": 480.1,
+      "hours_listened": 8.0
+    },
+    {
+      "month": 6,
+      "month_name": "June",
+      "streams": 148,
+      "unique_tracks": 132,
+      "unique_artists": 76,
+      "minutes_listened": 537.9,
+      "hours_listened": 9.0
+    },
+    {
+      "month": 7,
+      "month_name": "July",
+      "streams": 143,
+      "unique_tracks": 131,
+      "unique_artists": 70,
+      "minutes_listened": 538.0,
+      "hours_listened": 9.0
+    },
+    {
+      "month": 8,
+      "month_name": "August",
+      "streams": 129,
+      "unique_tracks": 121,
+      "unique_artists": 70,
+      "minutes_listened": 489.5,
+      "hours_listened": 8.2
+    },
+    {
+      "month": 9,
+      "month_name": "September",
+      "streams": 119,
+      "unique_tracks": 114,
+      "unique_artists": 64,
+      "minutes_listened": 438.6,
+      "hours_listened": 7.3
+    },
+    {
+      "month": 10,
+      "month_name": "October",
+      "streams": 138,
+      "unique_tracks": 127,
+      "unique_artists": 67,
+      "minutes_listened": 493.2,
+      "hours_listened": 8.2
+    },
+    {
+      "month": 11,
+      "month_name": "November",
+      "streams": 140,
+      "unique_tracks": 132,
+      "unique_artists": 69,
+      "minutes_listened": 506.5,
+      "hours_listened": 8.4
+    },
+    {
+      "month": 12,
+      "month_name": "December",
+      "streams": 130,
+      "unique_tracks": 120,
+      "unique_artists": 67,
+      "minutes_listened": 496.3,
+      "hours_listened": 8.3
+    }
+  ],
+  "peak_listening_times": [
+    {
+      "time_of_day": "Evening",
+      "stream_count": 356,
+      "pct_of_listening": 22.9,
+      "time_rank": 1
+    },
+    {
+      "time_of_day": "Early Morning",
+      "stream_count": 332,
+      "pct_of_listening": 21.4,
+      "time_rank": 2
+    },
+    {
+      "time_of_day": "Midday",
+      "stream_count": 254,
+      "pct_of_listening": 16.3,
+      "time_rank": 3
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_streams": 1104,
+    "weekend_streams": 451,
+    "weekday_minutes": 4119.9,
+    "weekend_minutes": 1699.0,
+    "listener_type": "Weekend Warrior"
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "listener_id": "15315954-edb2-4052-a5bf-682ffeda1f10",
+  "listener_name": "Emily Joyce",
+  "email": "brownjessica@example.org",
+  "country": "Japan",
+  "subscription_type": "free",
+  "year": 2025,
+  "generated_at": "2026-03-17T11:35:34.865725",
+  "summary": {
+    "total_streams": 1620,
+    "total_minutes": 6019.0,
+    "total_hours": 100.3,
+    "days_active": 362,
+    "unique_tracks": 798,
+    "unique_artists": 100,
+    "unique_genres": 18,
+    "avg_completion_pct": 80.3,
+    "full_plays": 1150,
+    "full_play_rate": 71.0,
+    "shuffle_pct": 34.7,
+    "offline_pct": 10.4,
+    "listening_percentile": 24.0
+  },
+  "top_artists": [
+    {
+      "artist_rank": 1,
+      "artist_name": "The Boards",
+      "artist_genre": "Country",
+      "stream_count": 31,
+      "minutes_listened": 137.2
+    },
+    {
+      "artist_rank": 2,
+      "artist_name": "The Presents",
+      "artist_genre": "Punk",
+      "stream_count": 29,
+      "minutes_listened": 128.7
+    },
+    {
+      "artist_rank": 3,
+      "artist_name": "The Naturals",
+      "artist_genre": "Jazz",
+      "stream_count": 29,
+      "minutes_listened": 104.0
+    },
+    {
+      "artist_rank": 4,
+      "artist_name": "The Reachs",
+      "artist_genre": "Classical",
+      "stream_count": 30,
+      "minutes_listened": 101.1
+    },
+    {
+      "artist_rank": 5,
+      "artist_name": "The Exists",
+      "artist_genre": "Indie",
+      "stream_count": 28,
+      "minutes_listened": 100.3
+    }
+  ],
+  "top_tracks": [
+    {
+      "track_rank": 1,
+      "track_title": "Mean common",
+      "artist_name": "The Manys",
+      "album": null,
+      "play_count": 9,
+      "minutes_listened": 21.7
+    },
+    {
+      "track_rank": 2,
+      "track_title": "End imagine",
+      "artist_name": "The Amongs",
+      "album": "Neon City",
+      "play_count": 7,
+      "minutes_listened": 35.3
+    },
+    {
+      "track_rank": 3,
+      "track_title": "Board dark",
+      "artist_name": "The Somethings",
+      "album": "Return to Waves",
+      "play_count": 6,
+      "minutes_listened": 13.2
+    },
+    {
+      "track_rank": 4,
+      "track_title": "News need task",
+      "artist_name": "Pamela Lopez",
+      "album": "Songs of Hearts",
+      "play_count": 6,
+      "minutes_listened": 24.3
+    },
+    {
+      "track_rank": 5,
+      "track_title": "Network available mean share",
+      "artist_name": "Taylor Coleman",
+      "album": "Songs of Stars",
+      "play_count": 6,
+      "minutes_listened": 26.3
+    }
+  ],
+  "top_genre": {
+    "top_genre": "Punk",
+    "stream_count": 145,
+    "minutes_listened": 548.7,
+    "genre_share_pct": 100.0
+  },
+  "listening_personality": {
+    "listening_personality": "Explorer",
+    "total_streams": 1620,
+    "unique_artists": 100,
+    "unique_tracks": 798,
+    "unique_genres": 18,
+    "shuffle_pct": 34.7,
+    "full_play_pct": 71.0
+  },
+  "monthly_trends": [
+    {
+      "month": 1,
+      "month_name": "January",
+      "streams": 154,
+      "unique_tracks": 145,
+      "unique_artists": 75,
+      "minutes_listened": 564.7,
+      "hours_listened": 9.4
+    },
+    {
+      "month": 2,
+      "month_name": "February",
+      "streams": 123,
+      "unique_tracks": 113,
+      "unique_artists": 63,
+      "minutes_listened": 486.1,
+      "hours_listened": 8.1
+    },
+    {
+      "month": 3,
+      "month_name": "March",
+      "streams": 158,
+      "unique_tracks": 143,
+      "unique_artists": 81,
+      "minutes_listened": 604.1,
+      "hours_listened": 10.1
+    },
+    {
+      "month": 4,
+      "month_name": "April",
+      "streams": 127,
+      "unique_tracks": 114,
+      "unique_artists": 67,
+      "minutes_listened": 476.2,
+      "hours_listened": 7.9
+    },
+    {
+      "month": 5,
+      "month_name": "May",
+      "streams": 124,
+      "unique_tracks": 117,
+      "unique_artists": 71,
+      "minutes_listened": 469.2,
+      "hours_listened": 7.8
+    },
+    {
+      "month": 6,
+      "month_name": "June",
+      "streams": 124,
+      "unique_tracks": 113,
+      "unique_artists": 69,
+      "minutes_listened": 442.0,
+      "hours_listened": 7.4
+    },
+    {
+      "month": 7,
+      "month_name": "July",
+      "streams": 142,
+      "unique_tracks": 131,
+      "unique_artists": 75,
+      "minutes_listened": 527.2,
+      "hours_listened": 8.8
+    },
+    {
+      "month": 8,
+      "month_name": "August",
+      "streams": 146,
+      "unique_tracks": 134,
+      "unique_artists": 74,
+      "minutes_listened": 575.1,
+      "hours_listened": 9.6
+    },
+    {
+      "month": 9,
+      "month_name": "September",
+      "streams": 118,
+      "unique_tracks": 111,
+      "unique_artists": 67,
+      "minutes_listened": 433.9,
+      "hours_listened": 7.2
+    },
+    {
+      "month": 10,
+      "month_name": "October",
+      "streams": 137,
+      "unique_tracks": 132,
+      "unique_artists": 77,
+      "minutes_listened": 522.8,
+      "hours_listened": 8.7
+    },
+    {
+      "month": 11,
+      "month_name": "November",
+      "streams": 135,
+      "unique_tracks": 125,
+      "unique_artists": 76,
+      "minutes_listened": 453.0,
+      "hours_listened": 7.6
+    },
+    {
+      "month": 12,
+      "month_name": "December",
+      "streams": 132,
+      "unique_tracks": 122,
+      "unique_artists": 65,
+      "minutes_listened": 464.8,
+      "hours_listened": 7.7
+    }
+  ],
+  "peak_listening_times": [
+    {
+      "time_of_day": "Evening",
+      "stream_count": 355,
+      "pct_of_listening": 21.9,
+      "time_rank": 1
+    },
+    {
+      "time_of_day": "Early Morning",
+      "stream_count": 325,
+      "pct_of_listening": 20.1,
+      "time_rank": 2
+    },
+    {
+      "time_of_day": "Midday",
+      "stream_count": 267,
+      "pct_of_listening": 16.5,
+      "time_rank": 3
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_streams": 1169,
+    "weekend_streams": 451,
+    "weekday_minutes": 4350.8,
+    "weekend_minutes": 1668.3,
+    "listener_type": "Weekday Listener"
+  }
+}

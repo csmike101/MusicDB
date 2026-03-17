@@ -1,0 +1,255 @@
+{
+  "listener_id": "0fd5478a-8080-409d-b7b7-605282ebe52c",
+  "listener_name": "Erica Rubio",
+  "email": "mdavid@example.org",
+  "country": "United Kingdom",
+  "subscription_type": "premium",
+  "year": 2025,
+  "generated_at": "2026-03-17T11:35:32.737406",
+  "summary": {
+    "total_streams": 2642,
+    "total_minutes": 9902.0,
+    "total_hours": 165.0,
+    "days_active": 365,
+    "unique_tracks": 922,
+    "unique_artists": 100,
+    "unique_genres": 18,
+    "avg_completion_pct": 79.9,
+    "full_plays": 1862,
+    "full_play_rate": 70.5,
+    "shuffle_pct": 35.8,
+    "offline_pct": 9.8,
+    "listening_percentile": 90.0
+  },
+  "top_artists": [
+    {
+      "artist_rank": 1,
+      "artist_name": "The Boards",
+      "artist_genre": "Country",
+      "stream_count": 61,
+      "minutes_listened": 257.5
+    },
+    {
+      "artist_rank": 2,
+      "artist_name": "The Exists",
+      "artist_genre": "Indie",
+      "stream_count": 56,
+      "minutes_listened": 192.8
+    },
+    {
+      "artist_rank": 3,
+      "artist_name": "The Calls",
+      "artist_genre": "Country",
+      "stream_count": 48,
+      "minutes_listened": 188.1
+    },
+    {
+      "artist_rank": 4,
+      "artist_name": "The Levels",
+      "artist_genre": "Folk",
+      "stream_count": 49,
+      "minutes_listened": 186.0
+    },
+    {
+      "artist_rank": 5,
+      "artist_name": "Jennifer Jones",
+      "artist_genre": "Punk",
+      "stream_count": 44,
+      "minutes_listened": 180.1
+    }
+  ],
+  "top_tracks": [
+    {
+      "track_rank": 1,
+      "track_title": "Often",
+      "artist_name": "The Longs",
+      "album": "Songs of City",
+      "play_count": 10,
+      "minutes_listened": 31.4
+    },
+    {
+      "track_rank": 2,
+      "track_title": "All old if operation trade",
+      "artist_name": "The Downs",
+      "album": null,
+      "play_count": 9,
+      "minutes_listened": 61.9
+    },
+    {
+      "track_rank": 3,
+      "track_title": "Drive",
+      "artist_name": "The Exists",
+      "album": null,
+      "play_count": 9,
+      "minutes_listened": 30.7
+    },
+    {
+      "track_rank": 4,
+      "track_title": "So ago",
+      "artist_name": "The Exists",
+      "album": "Midnight Waves",
+      "play_count": 9,
+      "minutes_listened": 34.3
+    },
+    {
+      "track_rank": 5,
+      "track_title": "Involve",
+      "artist_name": "The Parents",
+      "album": "Silent Mountains",
+      "play_count": 9,
+      "minutes_listened": 12.9
+    }
+  ],
+  "top_genre": {
+    "top_genre": "Punk",
+    "stream_count": 274,
+    "minutes_listened": 1051.5,
+    "genre_share_pct": 100.0
+  },
+  "listening_personality": {
+    "listening_personality": "Explorer",
+    "total_streams": 2642,
+    "unique_artists": 100,
+    "unique_tracks": 922,
+    "unique_genres": 18,
+    "shuffle_pct": 35.8,
+    "full_play_pct": 70.5
+  },
+  "monthly_trends": [
+    {
+      "month": 1,
+      "month_name": "January",
+      "streams": 202,
+      "unique_tracks": 185,
+      "unique_artists": 84,
+      "minutes_listened": 762.1,
+      "hours_listened": 12.7
+    },
+    {
+      "month": 2,
+      "month_name": "February",
+      "streams": 196,
+      "unique_tracks": 179,
+      "unique_artists": 84,
+      "minutes_listened": 760.0,
+      "hours_listened": 12.7
+    },
+    {
+      "month": 3,
+      "month_name": "March",
+      "streams": 222,
+      "unique_tracks": 193,
+      "unique_artists": 84,
+      "minutes_listened": 796.4,
+      "hours_listened": 13.3
+    },
+    {
+      "month": 4,
+      "month_name": "April",
+      "streams": 196,
+      "unique_tracks": 179,
+      "unique_artists": 81,
+      "minutes_listened": 762.3,
+      "hours_listened": 12.7
+    },
+    {
+      "month": 5,
+      "month_name": "May",
+      "streams": 220,
+      "unique_tracks": 196,
+      "unique_artists": 86,
+      "minutes_listened": 846.5,
+      "hours_listened": 14.1
+    },
+    {
+      "month": 6,
+      "month_name": "June",
+      "streams": 235,
+      "unique_tracks": 207,
+      "unique_artists": 87,
+      "minutes_listened": 866.7,
+      "hours_listened": 14.4
+    },
+    {
+      "month": 7,
+      "month_name": "July",
+      "streams": 224,
+      "unique_tracks": 206,
+      "unique_artists": 84,
+      "minutes_listened": 855.2,
+      "hours_listened": 14.3
+    },
+    {
+      "month": 8,
+      "month_name": "August",
+      "streams": 232,
+      "unique_tracks": 210,
+      "unique_artists": 86,
+      "minutes_listened": 886.1,
+      "hours_listened": 14.8
+    },
+    {
+      "month": 9,
+      "month_name": "September",
+      "streams": 215,
+      "unique_tracks": 192,
+      "unique_artists": 86,
+      "minutes_listened": 784.9,
+      "hours_listened": 13.1
+    },
+    {
+      "month": 10,
+      "month_name": "October",
+      "streams": 249,
+      "unique_tracks": 212,
+      "unique_artists": 90,
+      "minutes_listened": 897.7,
+      "hours_listened": 15.0
+    },
+    {
+      "month": 11,
+      "month_name": "November",
+      "streams": 208,
+      "unique_tracks": 191,
+      "unique_artists": 85,
+      "minutes_listened": 749.3,
+      "hours_listened": 12.5
+    },
+    {
+      "month": 12,
+      "month_name": "December",
+      "streams": 243,
+      "unique_tracks": 217,
+      "unique_artists": 86,
+      "minutes_listened": 934.5,
+      "hours_listened": 15.6
+    }
+  ],
+  "peak_listening_times": [
+    {
+      "time_of_day": "Evening",
+      "stream_count": 569,
+      "pct_of_listening": 21.5,
+      "time_rank": 1
+    },
+    {
+      "time_of_day": "Early Morning",
+      "stream_count": 516,
+      "pct_of_listening": 19.5,
+      "time_rank": 2
+    },
+    {
+      "time_of_day": "Midday",
+      "stream_count": 456,
+      "pct_of_listening": 17.3,
+      "time_rank": 3
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_streams": 1910,
+    "weekend_streams": 732,
+    "weekday_minutes": 7092.8,
+    "weekend_minutes": 2808.8,
+    "listener_type": "Weekday Listener"
+  }
+}

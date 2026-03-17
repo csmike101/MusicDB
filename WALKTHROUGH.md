@@ -358,27 +358,118 @@ sqlite3 gold.db "
 
 ---
 
-## Phase 5: Serving Layer (Coming Later)
+## Phase 5: Serving Layer
 
 > **Folder:** `05_serving/`
-> **Database:** `serving.db`
+> **Views in:** `gold.db`
 > **Goal:** Create analytics-ready views and Year-in-Review queries
 
 ### The Story
 
-The gold layer is powerful but complex. Business users shouldn't need to know about surrogate keys or fact tables. The serving layer provides **semantic views** that hide complexity:
+The gold layer is powerful but complex. Business users shouldn't need to know about surrogate keys, fact tables, or how to join five dimensions. They just want answers.
 
-- `v_stream_details` - One row per stream with all context denormalized
-- `v_listener_summary` - Aggregated stats per listener
-- `v_top_artists_by_listener` - Pre-ranked for Year-in-Review
+The serving layer provides **semantic views** that hide complexity:
+
+- `v_stream_details` - One row per stream with all context flattened
+- `v_listener_summary` - Complete listener profile with aggregated stats
+- `v_year_in_review_summary` - Everything needed for a personalized Year-in-Review
+
+This is also where we build the **Year-in-Review feature** the CEO asked for—personalized listening summaries like Spotify Wrapped.
 
 ### What You'll Learn
 
-1. **Semantic layers** - Business-friendly names and calculations
-2. **Window functions** - `ROW_NUMBER()`, `RANK()` for top-N queries
-3. **Year-in-Review patterns** - Top artists, genres, listening streaks
+1. **Semantic layers** - Business-friendly names hiding technical complexity
+2. **Window functions** - `ROW_NUMBER()`, `RANK()`, `PERCENT_RANK()` for rankings
+3. **User segmentation** - Classifying listeners by behavior patterns
+4. **Data export** - Generating JSON/CSV reports for downstream consumption
 
-*Implementation coming in Phase 5...*
+### The View Architecture
+
+```
+gold.db
+├── Tables (from Phase 4)
+│   └── fact_streams, dim_*, agg_*
+│
+└── Views (from Phase 5)
+    ├── General Analytics
+    │   ├── v_stream_details (99,493 rows)
+    │   ├── v_listener_summary (50 rows)
+    │   ├── v_track_popularity (1,000 rows)
+    │   ├── v_artist_popularity (100 rows)
+    │   └── v_daily_platform_stats (365 rows)
+    │
+    └── Year-in-Review
+        ├── v_top_artists_by_listener (250 rows)
+        ├── v_top_tracks_by_listener (250 rows)
+        ├── v_listening_personality (50 rows)
+        └── v_year_in_review_summary (50 rows)
+```
+
+### Listening Personalities
+
+One fun feature classifies each listener based on their behavior:
+
+```sql
+CASE
+    WHEN COUNT(DISTINCT artist_key) >= 80 THEN 'Explorer'
+    WHEN COUNT(DISTINCT genre) <= 3 THEN 'Genre Loyalist'
+    WHEN SUM(shuffle_mode) / COUNT(*) > 0.7 THEN 'The Shuffler'
+    WHEN SUM(is_full_play) / COUNT(*) > 0.85 THEN 'Deep Listener'
+    ELSE 'Casual Listener'
+END AS listening_personality
+```
+
+### Year-in-Review Export
+
+The `03_export_reports.py` script generates personalized JSON reports:
+
+```json
+{
+  "listener_name": "Erica Rubio",
+  "year": 2025,
+  "summary": {
+    "total_hours": 165.0,
+    "unique_artists": 100,
+    "listening_percentile": 90
+  },
+  "top_artists": [
+    {"rank": 1, "name": "The Boards", "minutes": 257.5},
+    ...
+  ],
+  "listening_personality": "Explorer"
+}
+```
+
+### Explore It Yourself
+
+```bash
+cd 05_serving
+
+# Export Year-in-Review for 5 listeners
+python 03_export_reports.py --limit 5 --csv
+
+# View a generated report
+cat reports/*_wrapped_2025.json | python -m json.tool | head -50
+
+# Query the serving views directly
+sqlite3 ../04_gold/gold.db "
+  SELECT listener_name, total_hours, listening_percentile
+  FROM v_year_in_review_summary
+  ORDER BY total_hours DESC
+  LIMIT 10;
+"
+
+# Find all 'Explorer' personalities
+sqlite3 ../04_gold/gold.db "
+  SELECT listener_name, unique_artists, unique_genres
+  FROM v_listening_personality
+  WHERE listening_personality = 'Explorer';
+"
+```
+
+**Question to ponder:** The semantic views flatten 5-table joins into single queries. What's the trade-off compared to querying fact tables directly?
+
+> **Deep dive:** See `05_serving/README.md` for all 15 views and their use cases.
 
 ---
 

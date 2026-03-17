@@ -1,6 +1,6 @@
 # Phase 5: Serving Layer
 
-**Status:** Pending
+**Status:** Complete
 
 ---
 
@@ -17,7 +17,8 @@ Create analytics-ready views and queries for the "Year in Review" (Spotify Wrapp
 | `05_serving/01_create_views.sql` | Semantic views for analytics |
 | `05_serving/02_year_in_review.sql` | Year-in-Review queries |
 | `05_serving/03_export_reports.py` | Export results to JSON/CSV |
-| `05_serving/serving.db` | SQLite database (generated, attaches gold.db) |
+| `05_serving/README.md` | Layer documentation |
+| Views created in `gold.db` | SQLite views cannot reference attached databases |
 
 ---
 
@@ -310,13 +311,13 @@ if __name__ == "__main__":
 
 ## Tasks
 
-- [ ] Create `05_serving/01_create_views.sql`
-- [ ] Create `05_serving/02_year_in_review.sql`
-- [ ] Create `05_serving/03_export_reports.py`
-- [ ] Create semantic views
-- [ ] Test Year-in-Review queries
-- [ ] Export sample reports for a few listeners
-- [ ] Verify query performance
+- [x] Create `05_serving/01_create_views.sql`
+- [x] Create `05_serving/02_year_in_review.sql`
+- [x] Create `05_serving/03_export_reports.py`
+- [x] Create semantic views (15 views created in gold.db)
+- [x] Test Year-in-Review queries
+- [x] Export sample reports for a few listeners
+- [x] Verify query performance
 
 ---
 

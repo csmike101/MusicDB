@@ -1,0 +1,255 @@
+{
+  "listener_id": "1cc7732f-44ce-4c89-8856-6da0a9d24631",
+  "listener_name": "Joshua Lewis",
+  "email": "curtis61@example.com",
+  "country": "Germany",
+  "subscription_type": "free",
+  "year": 2025,
+  "generated_at": "2026-03-17T11:35:39.602656",
+  "summary": {
+    "total_streams": 1558,
+    "total_minutes": 5934.0,
+    "total_hours": 98.9,
+    "days_active": 363,
+    "unique_tracks": 784,
+    "unique_artists": 100,
+    "unique_genres": 18,
+    "avg_completion_pct": 80.0,
+    "full_plays": 1096,
+    "full_play_rate": 70.3,
+    "shuffle_pct": 34.2,
+    "offline_pct": 9.3,
+    "listening_percentile": 12.0
+  },
+  "top_artists": [
+    {
+      "artist_rank": 1,
+      "artist_name": "The Richs",
+      "artist_genre": "Country",
+      "stream_count": 37,
+      "minutes_listened": 162.1
+    },
+    {
+      "artist_rank": 2,
+      "artist_name": "The Calls",
+      "artist_genre": "Country",
+      "stream_count": 39,
+      "minutes_listened": 147.7
+    },
+    {
+      "artist_rank": 3,
+      "artist_name": "The Sets",
+      "artist_genre": "Country",
+      "stream_count": 33,
+      "minutes_listened": 128.6
+    },
+    {
+      "artist_rank": 4,
+      "artist_name": "Joseph Hayes",
+      "artist_genre": "R&b",
+      "stream_count": 22,
+      "minutes_listened": 127.2
+    },
+    {
+      "artist_rank": 5,
+      "artist_name": "The Boards",
+      "artist_genre": "Country",
+      "stream_count": 34,
+      "minutes_listened": 126.0
+    }
+  ],
+  "top_tracks": [
+    {
+      "track_rank": 1,
+      "track_title": "Recently investment",
+      "artist_name": "The Finishs",
+      "album": "Dark Days",
+      "play_count": 7,
+      "minutes_listened": 39.9
+    },
+    {
+      "track_rank": 2,
+      "track_title": "Brother according pressure reach firm",
+      "artist_name": "The Richs",
+      "album": "Silent Days",
+      "play_count": 6,
+      "minutes_listened": 36.6
+    },
+    {
+      "track_rank": 3,
+      "track_title": "Approach some",
+      "artist_name": "The Richs",
+      "album": "Silent Stars Dreams",
+      "play_count": 6,
+      "minutes_listened": 27.2
+    },
+    {
+      "track_rank": 4,
+      "track_title": "Herself",
+      "artist_name": "The Parts",
+      "album": "Electric Mountains",
+      "play_count": 6,
+      "minutes_listened": 33.3
+    },
+    {
+      "track_rank": 5,
+      "track_title": "Finish despite",
+      "artist_name": "The Nones",
+      "album": "The Fire",
+      "play_count": 5,
+      "minutes_listened": 27.0
+    }
+  ],
+  "top_genre": {
+    "top_genre": "Country",
+    "stream_count": 187,
+    "minutes_listened": 729.2,
+    "genre_share_pct": 100.0
+  },
+  "listening_personality": {
+    "listening_personality": "Explorer",
+    "total_streams": 1558,
+    "unique_artists": 100,
+    "unique_tracks": 784,
+    "unique_genres": 18,
+    "shuffle_pct": 34.2,
+    "full_play_pct": 70.3
+  },
+  "monthly_trends": [
+    {
+      "month": 1,
+      "month_name": "January",
+      "streams": 127,
+      "unique_tracks": 123,
+      "unique_artists": 69,
+      "minutes_listened": 476.4,
+      "hours_listened": 7.9
+    },
+    {
+      "month": 2,
+      "month_name": "February",
+      "streams": 137,
+      "unique_tracks": 126,
+      "unique_artists": 73,
+      "minutes_listened": 519.7,
+      "hours_listened": 8.7
+    },
+    {
+      "month": 3,
+      "month_name": "March",
+      "streams": 129,
+      "unique_tracks": 123,
+      "unique_artists": 72,
+      "minutes_listened": 527.5,
+      "hours_listened": 8.8
+    },
+    {
+      "month": 4,
+      "month_name": "April",
+      "streams": 136,
+      "unique_tracks": 131,
+      "unique_artists": 65,
+      "minutes_listened": 517.2,
+      "hours_listened": 8.6
+    },
+    {
+      "month": 5,
+      "month_name": "May",
+      "streams": 138,
+      "unique_tracks": 131,
+      "unique_artists": 71,
+      "minutes_listened": 537.3,
+      "hours_listened": 9.0
+    },
+    {
+      "month": 6,
+      "month_name": "June",
+      "streams": 122,
+      "unique_tracks": 114,
+      "unique_artists": 69,
+      "minutes_listened": 487.8,
+      "hours_listened": 8.1
+    },
+    {
+      "month": 7,
+      "month_name": "July",
+      "streams": 127,
+      "unique_tracks": 120,
+      "unique_artists": 70,
+      "minutes_listened": 470.4,
+      "hours_listened": 7.8
+    },
+    {
+      "month": 8,
+      "month_name": "August",
+      "streams": 124,
+      "unique_tracks": 115,
+      "unique_artists": 73,
+      "minutes_listened": 431.3,
+      "hours_listened": 7.2
+    },
+    {
+      "month": 9,
+      "month_name": "September",
+      "streams": 140,
+      "unique_tracks": 127,
+      "unique_artists": 73,
+      "minutes_listened": 522.8,
+      "hours_listened": 8.7
+    },
+    {
+      "month": 10,
+      "month_name": "October",
+      "streams": 106,
+      "unique_tracks": 102,
+      "unique_artists": 65,
+      "minutes_listened": 435.8,
+      "hours_listened": 7.3
+    },
+    {
+      "month": 11,
+      "month_name": "November",
+      "streams": 143,
+      "unique_tracks": 131,
+      "unique_artists": 74,
+      "minutes_listened": 522.9,
+      "hours_listened": 8.7
+    },
+    {
+      "month": 12,
+      "month_name": "December",
+      "streams": 129,
+      "unique_tracks": 122,
+      "unique_artists": 71,
+      "minutes_listened": 485.0,
+      "hours_listened": 8.1
+    }
+  ],
+  "peak_listening_times": [
+    {
+      "time_of_day": "Evening",
+      "stream_count": 365,
+      "pct_of_listening": 23.4,
+      "time_rank": 1
+    },
+    {
+      "time_of_day": "Early Morning",
+      "stream_count": 295,
+      "pct_of_listening": 18.9,
+      "time_rank": 2
+    },
+    {
+      "time_of_day": "Midday",
+      "stream_count": 229,
+      "pct_of_listening": 14.7,
+      "time_rank": 3
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_streams": 1140,
+    "weekend_streams": 418,
+    "weekday_minutes": 4360.4,
+    "weekend_minutes": 1573.7,
+    "listener_type": "Weekday Listener"
+  }
+}

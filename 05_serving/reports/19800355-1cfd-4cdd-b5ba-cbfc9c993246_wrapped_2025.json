@@ -1,0 +1,255 @@
+{
+  "listener_id": "19800355-1cfd-4cdd-b5ba-cbfc9c993246",
+  "listener_name": "Nancy Jones",
+  "email": "williamsyvette@example.org",
+  "country": "Australia",
+  "subscription_type": "free",
+  "year": 2025,
+  "generated_at": "2026-03-17T11:35:37.090260",
+  "summary": {
+    "total_streams": 1602,
+    "total_minutes": 6021.0,
+    "total_hours": 100.3,
+    "days_active": 360,
+    "unique_tracks": 803,
+    "unique_artists": 100,
+    "unique_genres": 18,
+    "avg_completion_pct": 79.5,
+    "full_plays": 1112,
+    "full_play_rate": 69.4,
+    "shuffle_pct": 34.9,
+    "offline_pct": 10.1,
+    "listening_percentile": 27.0
+  },
+  "top_artists": [
+    {
+      "artist_rank": 1,
+      "artist_name": "The Peoples",
+      "artist_genre": "Pop",
+      "stream_count": 29,
+      "minutes_listened": 133.7
+    },
+    {
+      "artist_rank": 2,
+      "artist_name": "The Boards",
+      "artist_genre": "Country",
+      "stream_count": 32,
+      "minutes_listened": 130.7
+    },
+    {
+      "artist_rank": 3,
+      "artist_name": "The Richs",
+      "artist_genre": "Country",
+      "stream_count": 30,
+      "minutes_listened": 128.8
+    },
+    {
+      "artist_rank": 4,
+      "artist_name": "The Calls",
+      "artist_genre": "Country",
+      "stream_count": 33,
+      "minutes_listened": 120.3
+    },
+    {
+      "artist_rank": 5,
+      "artist_name": "Taylor Coleman",
+      "artist_genre": "Rock",
+      "stream_count": 29,
+      "minutes_listened": 116.5
+    }
+  ],
+  "top_tracks": [
+    {
+      "track_rank": 1,
+      "track_title": "Push look opportunity positive",
+      "artist_name": "The Parts",
+      "album": "Return to Hearts",
+      "play_count": 7,
+      "minutes_listened": 22.5
+    },
+    {
+      "track_rank": 2,
+      "track_title": "Ten interest",
+      "artist_name": "The Outsides",
+      "album": "Mountains",
+      "play_count": 7,
+      "minutes_listened": 17.8
+    },
+    {
+      "track_rank": 3,
+      "track_title": "Hospital",
+      "artist_name": "The Richs",
+      "album": "Rain",
+      "play_count": 6,
+      "minutes_listened": 36.7
+    },
+    {
+      "track_rank": 4,
+      "track_title": "Not teach believe",
+      "artist_name": "The Scientists",
+      "album": "Roads Rain",
+      "play_count": 6,
+      "minutes_listened": 10.5
+    },
+    {
+      "track_rank": 5,
+      "track_title": "Chance heavy senior",
+      "artist_name": "The Sources",
+      "album": "Songs of Hearts",
+      "play_count": 6,
+      "minutes_listened": 8.9
+    }
+  ],
+  "top_genre": {
+    "top_genre": "Country",
+    "stream_count": 160,
+    "minutes_listened": 606.9,
+    "genre_share_pct": 100.0
+  },
+  "listening_personality": {
+    "listening_personality": "Explorer",
+    "total_streams": 1602,
+    "unique_artists": 100,
+    "unique_tracks": 803,
+    "unique_genres": 18,
+    "shuffle_pct": 34.9,
+    "full_play_pct": 69.4
+  },
+  "monthly_trends": [
+    {
+      "month": 1,
+      "month_name": "January",
+      "streams": 127,
+      "unique_tracks": 122,
+      "unique_artists": 74,
+      "minutes_listened": 438.5,
+      "hours_listened": 7.3
+    },
+    {
+      "month": 2,
+      "month_name": "February",
+      "streams": 122,
+      "unique_tracks": 117,
+      "unique_artists": 71,
+      "minutes_listened": 492.6,
+      "hours_listened": 8.2
+    },
+    {
+      "month": 3,
+      "month_name": "March",
+      "streams": 131,
+      "unique_tracks": 122,
+      "unique_artists": 62,
+      "minutes_listened": 524.4,
+      "hours_listened": 8.7
+    },
+    {
+      "month": 4,
+      "month_name": "April",
+      "streams": 116,
+      "unique_tracks": 109,
+      "unique_artists": 62,
+      "minutes_listened": 421.7,
+      "hours_listened": 7.0
+    },
+    {
+      "month": 5,
+      "month_name": "May",
+      "streams": 147,
+      "unique_tracks": 136,
+      "unique_artists": 75,
+      "minutes_listened": 542.3,
+      "hours_listened": 9.0
+    },
+    {
+      "month": 6,
+      "month_name": "June",
+      "streams": 137,
+      "unique_tracks": 128,
+      "unique_artists": 70,
+      "minutes_listened": 543.1,
+      "hours_listened": 9.1
+    },
+    {
+      "month": 7,
+      "month_name": "July",
+      "streams": 134,
+      "unique_tracks": 127,
+      "unique_artists": 74,
+      "minutes_listened": 513.0,
+      "hours_listened": 8.5
+    },
+    {
+      "month": 8,
+      "month_name": "August",
+      "streams": 133,
+      "unique_tracks": 122,
+      "unique_artists": 70,
+      "minutes_listened": 500.3,
+      "hours_listened": 8.3
+    },
+    {
+      "month": 9,
+      "month_name": "September",
+      "streams": 154,
+      "unique_tracks": 145,
+      "unique_artists": 75,
+      "minutes_listened": 575.8,
+      "hours_listened": 9.6
+    },
+    {
+      "month": 10,
+      "month_name": "October",
+      "streams": 127,
+      "unique_tracks": 117,
+      "unique_artists": 68,
+      "minutes_listened": 451.8,
+      "hours_listened": 7.5
+    },
+    {
+      "month": 11,
+      "month_name": "November",
+      "streams": 135,
+      "unique_tracks": 126,
+      "unique_artists": 78,
+      "minutes_listened": 531.3,
+      "hours_listened": 8.9
+    },
+    {
+      "month": 12,
+      "month_name": "December",
+      "streams": 139,
+      "unique_tracks": 134,
+      "unique_artists": 70,
+      "minutes_listened": 486.0,
+      "hours_listened": 8.1
+    }
+  ],
+  "peak_listening_times": [
+    {
+      "time_of_day": "Evening",
+      "stream_count": 356,
+      "pct_of_listening": 22.2,
+      "time_rank": 1
+    },
+    {
+      "time_of_day": "Early Morning",
+      "stream_count": 289,
+      "pct_of_listening": 18.0,
+      "time_rank": 2
+    },
+    {
+      "time_of_day": "Midday",
+      "stream_count": 247,
+      "pct_of_listening": 15.4,
+      "time_rank": 3
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_streams": 1172,
+    "weekend_streams": 430,
+    "weekday_minutes": 4363.0,
+    "weekend_minutes": 1657.6,
+    "listener_type": "Weekday Listener"
+  }
+}
