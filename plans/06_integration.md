@@ -1,4 +1,4 @@
-# Phase 7: Integration
+# Phase 6: Integration
 
 **Status:** Pending
 
@@ -41,11 +41,11 @@ logger = logging.getLogger(__name__)
 
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
-RAW_DIR = PROJECT_ROOT / "00_raw"
-BRONZE_DIR = PROJECT_ROOT / "01_bronze"
-SILVER_DIR = PROJECT_ROOT / "02_silver"
-GOLD_DIR = PROJECT_ROOT / "03_gold"
-SERVING_DIR = PROJECT_ROOT / "04_serving"
+RAW_DIR = PROJECT_ROOT / "01_raw"
+BRONZE_DIR = PROJECT_ROOT / "02_bronze"
+SILVER_DIR = PROJECT_ROOT / "03_silver"
+GOLD_DIR = PROJECT_ROOT / "04_gold"
+SERVING_DIR = PROJECT_ROOT / "05_serving"
 
 # Database paths
 BRONZE_DB = BRONZE_DIR / "bronze.db"

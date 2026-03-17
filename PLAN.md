@@ -12,13 +12,13 @@ A tutorial-style workbook demonstrating **medallion architecture** (Raw → Bron
 
 | Phase | Name | Status | Details |
 |-------|------|--------|---------|
-| 1 | Foundation | ✅ Complete | [plans/01_foundation.md](./plans/01_foundation.md) |
-| 2 | Raw Layer | ✅ Complete | [plans/02_raw_layer.md](./plans/02_raw_layer.md) |
-| 3 | Bronze Layer | ✅ Complete | [plans/03_bronze_layer.md](./plans/03_bronze_layer.md) |
-| 4 | Silver Layer | 🔲 Next | [plans/04_silver_layer.md](./plans/04_silver_layer.md) |
-| 5 | Gold Layer | 🔲 Pending | [plans/05_gold_layer.md](./plans/05_gold_layer.md) |
-| 6 | Serving Layer | 🔲 Pending | [plans/06_serving_layer.md](./plans/06_serving_layer.md) |
-| 7 | Integration | 🔲 Pending | [plans/07_integration.md](./plans/07_integration.md) |
+| 0 | Foundation | ✅ Complete | [plans/00_foundation.md](./plans/00_foundation.md) |
+| 1 | Raw Layer | ✅ Complete | [plans/01_raw_layer.md](./plans/01_raw_layer.md) |
+| 2 | Bronze Layer | ✅ Complete | [plans/02_bronze_layer.md](./plans/02_bronze_layer.md) |
+| 3 | Silver Layer | 🔲 Next | [plans/03_silver_layer.md](./plans/03_silver_layer.md) |
+| 4 | Gold Layer | 🔲 Pending | [plans/04_gold_layer.md](./plans/04_gold_layer.md) |
+| 5 | Serving Layer | 🔲 Pending | [plans/05_serving_layer.md](./plans/05_serving_layer.md) |
+| 6 | Integration | 🔲 Pending | [plans/06_integration.md](./plans/06_integration.md) |
 
 ---
 
@@ -32,19 +32,19 @@ data_modeling/
 ├── requirements.txt              # Python dependencies
 │
 ├── plans/                        # Detailed phase documentation
-│   ├── 01_foundation.md
-│   ├── 02_raw_layer.md
-│   ├── 03_bronze_layer.md
-│   ├── 04_silver_layer.md
-│   ├── 05_gold_layer.md
-│   ├── 06_serving_layer.md
-│   └── 07_integration.md
+│   ├── 00_foundation.md
+│   ├── 01_raw_layer.md
+│   ├── 02_bronze_layer.md
+│   ├── 03_silver_layer.md
+│   ├── 04_gold_layer.md
+│   ├── 05_serving_layer.md
+│   └── 06_integration.md
 │
-├── 00_raw/                       # Layer 0: Raw data generation
-├── 01_bronze/                    # Layer 1: Staging
-├── 02_silver/                    # Layer 2: Cleaned & normalized
-├── 03_gold/                      # Layer 3: Dimensional model
-├── 04_serving/                   # Layer 4: Analytics layer
+├── 01_raw/                       # Layer 1: Raw data generation
+├── 02_bronze/                    # Layer 2: Staging
+├── 03_silver/                    # Layer 3: Cleaned & normalized
+├── 04_gold/                      # Layer 4: Dimensional model
+├── 05_serving/                   # Layer 5: Analytics layer
 └── scripts/                      # Pipeline utilities
 ```
 
@@ -52,25 +52,25 @@ data_modeling/
 
 ## Phase Summaries
 
-### Phase 1: Foundation ✅
+### Phase 0: Foundation ✅
 Project setup, directory structure, CLAUDE.md, README.md, requirements.txt
 
-### Phase 2: Raw Layer ✅
+### Phase 1: Raw Layer ✅
 Data generator with ~50 listeners, ~100 artists, ~1000 tracks, ~100k streams. Intentional data quality issues for teaching.
 
-### Phase 3: Bronze Layer (Next)
+### Phase 2: Bronze Layer ✅
 Staging tables with TEXT columns, audit columns (_source_file, _loaded_at, _row_hash), no constraints.
 
-### Phase 4: Silver Layer
+### Phase 3: Silver Layer (Next)
 3NF schema with proper types, constraints, deduplication, genre normalization, FK validation.
 
-### Phase 5: Gold Layer
+### Phase 4: Gold Layer
 Star schema with dim_date, dim_listener, dim_artist, dim_track, dim_device, fact_streams, and aggregate tables.
 
-### Phase 6: Serving Layer
+### Phase 5: Serving Layer
 Semantic views (v_stream_details, v_listener_summary, v_track_popularity) and Year-in-Review analytics queries.
 
-### Phase 7: Integration
+### Phase 6: Integration
 Pipeline orchestration (run_all.py), cross-layer validation, reset script.
 
 ---

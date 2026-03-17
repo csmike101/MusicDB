@@ -9,7 +9,7 @@ Usage:
 
 Prerequisites:
     - Run 01_create_tables.sql first to create the tables
-    - Raw data must exist in ../00_raw/data/
+    - Raw data must exist in ../01_raw/data/
 """
 
 import csv
@@ -131,7 +131,7 @@ def main():
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
     db_path = script_dir / "bronze.db"
-    raw_path = project_root / "00_raw" / "data"
+    raw_path = project_root / "01_raw" / "data"
     ddl_path = script_dir / "01_create_tables.sql"
 
     print("Loading data into Bronze layer...")

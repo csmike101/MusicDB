@@ -19,8 +19,8 @@ build/
 *.egg-info/
 
 # Generated data files (re-generate with generate_data.py)
-00_raw/data/*.json
-00_raw/data/*.csv
+01_raw/data/*.json
+01_raw/data/*.csv
 
 # SQLite databases (re-generate by running pipeline)
 *.db

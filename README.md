@@ -64,7 +64,7 @@ pip install -r requirements.txt
 ### 3. Generate Sample Data
 
 ```bash
-cd 00_raw
+cd 01_raw
 python generate_data.py
 ```
 
@@ -74,11 +74,11 @@ Work through each layer in order:
 
 | Layer | Folder | Focus |
 |-------|--------|-------|
-| Raw | `00_raw/` | Data generation, understanding source formats |
-| Bronze | `01_bronze/` | Staging, audit columns, preserving raw data |
-| Silver | `02_silver/` | Cleaning, normalization, constraints |
-| Gold | `03_gold/` | Dimensional modeling, star schema |
-| Serving | `04_serving/` | Semantic views, analytics queries |
+| Raw | `01_raw/` | Data generation, understanding source formats |
+| Bronze | `02_bronze/` | Staging, audit columns, preserving raw data |
+| Silver | `03_silver/` | Cleaning, normalization, constraints |
+| Gold | `04_gold/` | Dimensional modeling, star schema |
+| Serving | `05_serving/` | Semantic views, analytics queries |
 
 Each folder contains:
 - `README.md` - Concepts and explanations
@@ -143,19 +143,19 @@ data_modeling/
 ├── venv/                  # Python virtual environment (not in git)
 │
 ├── plans/                 # Detailed phase documentation
-│   ├── 01_foundation.md   # Project setup
-│   ├── 02_raw_layer.md    # Data generation design
-│   ├── 03_bronze_layer.md # Staging layer design
-│   ├── 04_silver_layer.md # Normalization design
-│   ├── 05_gold_layer.md   # Star schema design
-│   ├── 06_serving_layer.md # Analytics queries
-│   └── 07_integration.md  # Pipeline orchestration
+│   ├── 00_foundation.md   # Project setup
+│   ├── 01_raw_layer.md    # Data generation design
+│   ├── 02_bronze_layer.md # Staging layer design
+│   ├── 03_silver_layer.md # Normalization design
+│   ├── 04_gold_layer.md   # Star schema design
+│   ├── 05_serving_layer.md # Analytics queries
+│   └── 06_integration.md  # Pipeline orchestration
 │
-├── 00_raw/                # Data generation
-├── 01_bronze/             # Raw staging (bronze.db)
-├── 02_silver/             # Cleaned & normalized (silver.db)
-├── 03_gold/               # Dimensional model (gold.db)
-├── 04_serving/            # Analytics layer (serving.db)
+├── 01_raw/                # Data generation
+├── 02_bronze/             # Raw staging (bronze.db)
+├── 03_silver/             # Cleaned & normalized (silver.db)
+├── 04_gold/               # Dimensional model (gold.db)
+├── 05_serving/            # Analytics layer (serving.db)
 └── scripts/               # Pipeline utilities
 ```
 

@@ -1,4 +1,4 @@
-# Phase 2: Raw Layer
+# Phase 1: Raw Layer
 
 **Status:** Complete
 
@@ -14,11 +14,11 @@ Generate realistic music streaming data with intentional data quality issues for
 
 | File | Format | Purpose |
 |------|--------|---------|
-| `00_raw/generate_data.py` | Python | Main data generation script |
-| `00_raw/data/listeners.json` | JSON | ~50 listener profiles |
-| `00_raw/data/artists.json` | JSON | ~100 artist records |
-| `00_raw/data/tracks.json` | JSON | ~1000 track records |
-| `00_raw/data/streams.csv` | CSV | ~100k stream events |
+| `01_raw/generate_data.py` | Python | Main data generation script |
+| `01_raw/data/listeners.json` | JSON | ~50 listener profiles |
+| `01_raw/data/artists.json` | JSON | ~100 artist records |
+| `01_raw/data/tracks.json` | JSON | ~1000 track records |
+| `01_raw/data/streams.csv` | CSV | ~100k stream events |
 
 ---
 
@@ -89,7 +89,7 @@ stream_id,listener_id,track_id,streamed_at,duration_played_ms,device_type,shuffl
 ## Generator Design
 
 ```python
-# 00_raw/generate_data.py
+# 01_raw/generate_data.py
 
 import json
 import csv

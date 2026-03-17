@@ -1,4 +1,4 @@
-# Layer 0: Raw Data
+# Layer 1: Raw Data
 
 ## Overview
 
@@ -101,7 +101,7 @@ The generator creates realistic "dirty" data to practice cleaning:
 
 ```bash
 # Ensure venv is activated first
-cd 00_raw
+cd 01_raw
 python generate_data.py
 ```
 
@@ -137,4 +137,4 @@ Streaming APIs typically report duration in milliseconds for precision. This cre
 
 ## Next Steps
 
-After generating raw data, proceed to **01_bronze/** to load it into staging tables.
+After generating raw data, proceed to **02_bronze/** to load it into staging tables.

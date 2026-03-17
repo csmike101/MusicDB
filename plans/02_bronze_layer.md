@@ -1,4 +1,4 @@
-# Phase 3: Bronze Layer
+# Phase 2: Bronze Layer
 
 **Status:** Complete
 
@@ -14,9 +14,9 @@ Create staging tables that preserve raw data exactly as-is, with audit columns f
 
 | File | Purpose |
 |------|---------|
-| `01_bronze/01_create_tables.sql` | DDL for bronze tables |
-| `01_bronze/02_load_data.py` | Python script to load raw files into bronze |
-| `01_bronze/bronze.db` | SQLite database (generated) |
+| `02_bronze/01_create_tables.sql` | DDL for bronze tables |
+| `02_bronze/02_load_data.py` | Python script to load raw files into bronze |
+| `02_bronze/bronze.db` | SQLite database (generated) |
 
 ---
 
@@ -99,7 +99,7 @@ CREATE TABLE bronze_streams (
 ## Loading Script Design
 
 ```python
-# 01_bronze/02_load_data.py
+# 02_bronze/02_load_data.py
 
 import sqlite3
 import json
@@ -138,8 +138,8 @@ def load_csv_to_bronze(db_path: str, table: str, csv_path: str):
     ...
 
 if __name__ == "__main__":
-    DB_PATH = "01_bronze/bronze.db"
-    RAW_PATH = "00_raw/data"
+    DB_PATH = "02_bronze/bronze.db"
+    RAW_PATH = "01_raw/data"
 
     # Create tables first (run 01_create_tables.sql)
 
@@ -166,8 +166,8 @@ if __name__ == "__main__":
 
 ## Tasks
 
-- [x] Create `01_bronze/01_create_tables.sql`
-- [x] Create `01_bronze/02_load_data.py`
+- [x] Create `02_bronze/01_create_tables.sql`
+- [x] Create `02_bronze/02_load_data.py`
 - [x] Run DDL to create tables
 - [x] Load all raw files into bronze tables
 - [x] Verify row counts match raw data

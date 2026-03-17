@@ -1,4 +1,4 @@
-# Phase 5: Gold Layer
+# Phase 4: Gold Layer
 
 **Status:** Pending
 
@@ -14,13 +14,13 @@ Build a dimensional model (star schema) optimized for analytics. Create fact tab
 
 | File | Purpose |
 |------|---------|
-| `03_gold/01_create_dimensions.sql` | Dimension table DDL |
-| `03_gold/02_create_facts.sql` | Fact table DDL |
-| `03_gold/03_create_aggregates.sql` | Pre-aggregated table DDL |
-| `03_gold/04_load_dimensions.sql` | Populate dimensions |
-| `03_gold/05_load_facts.sql` | Populate facts |
-| `03_gold/06_load_aggregates.sql` | Populate aggregates |
-| `03_gold/gold.db` | SQLite database (generated) |
+| `04_gold/01_create_dimensions.sql` | Dimension table DDL |
+| `04_gold/02_create_facts.sql` | Fact table DDL |
+| `04_gold/03_create_aggregates.sql` | Pre-aggregated table DDL |
+| `04_gold/04_load_dimensions.sql` | Populate dimensions |
+| `04_gold/05_load_facts.sql` | Populate facts |
+| `04_gold/06_load_aggregates.sql` | Populate aggregates |
+| `04_gold/gold.db` | SQLite database (generated) |
 
 ---
 
@@ -235,12 +235,12 @@ END AS duration_bucket
 
 ## Tasks
 
-- [ ] Create `03_gold/01_create_dimensions.sql`
-- [ ] Create `03_gold/02_create_facts.sql`
-- [ ] Create `03_gold/03_create_aggregates.sql`
-- [ ] Create `03_gold/04_load_dimensions.sql`
-- [ ] Create `03_gold/05_load_facts.sql`
-- [ ] Create `03_gold/06_load_aggregates.sql`
+- [ ] Create `04_gold/01_create_dimensions.sql`
+- [ ] Create `04_gold/02_create_facts.sql`
+- [ ] Create `04_gold/03_create_aggregates.sql`
+- [ ] Create `04_gold/04_load_dimensions.sql`
+- [ ] Create `04_gold/05_load_facts.sql`
+- [ ] Create `04_gold/06_load_aggregates.sql`
 - [ ] Generate date dimension for 2025
 - [ ] Populate all dimensions from silver
 - [ ] Populate fact table with surrogate keys

@@ -1,4 +1,4 @@
-# Layer 1: Bronze (Raw Staging)
+# Layer 2: Bronze (Raw Staging)
 
 ## Overview
 
@@ -89,7 +89,7 @@ The `02_load_data.py` script:
 
 ```bash
 # Ensure virtual environment is activated
-cd 01_bronze
+cd 02_bronze
 python 02_load_data.py
 ```
 
@@ -140,4 +140,4 @@ LIMIT 10;
 
 ## Next Steps
 
-After loading bronze data, proceed to **02_silver/** to clean and normalize.
+After loading bronze data, proceed to **03_silver/** to clean and normalize.

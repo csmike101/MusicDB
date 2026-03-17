@@ -1,4 +1,4 @@
-# Phase 1: Foundation
+# Phase 0: Foundation
 
 **Status:** Complete
 
@@ -17,11 +17,11 @@ Set up the project structure, documentation, and development environment for the
 | `CLAUDE.md` | Project context and coding conventions for Claude Code |
 | `README.md` | Workbook introduction and learning objectives |
 | `requirements.txt` | Python dependencies (faker) |
-| `00_raw/` | Directory for raw data generation |
-| `01_bronze/` | Directory for bronze layer |
-| `02_silver/` | Directory for silver layer |
-| `03_gold/` | Directory for gold layer |
-| `04_serving/` | Directory for serving layer |
+| `01_raw/` | Directory for raw data generation |
+| `02_bronze/` | Directory for bronze layer |
+| `03_silver/` | Directory for silver layer |
+| `04_gold/` | Directory for gold layer |
+| `05_serving/` | Directory for serving layer |
 | `scripts/` | Directory for pipeline utilities |
 
 ---
@@ -35,11 +35,11 @@ data_modeling/
 ├── PLAN.md                       # Implementation plan (living document)
 ├── requirements.txt              # Python dependencies
 │
-├── 00_raw/                       # Layer 0: Raw data generation
-├── 01_bronze/                    # Layer 1: Staging
-├── 02_silver/                    # Layer 2: Cleaned & normalized
-├── 03_gold/                      # Layer 3: Dimensional model
-├── 04_serving/                   # Layer 4: Analytics layer
+├── 01_raw/                       # Layer 1: Raw data generation
+├── 02_bronze/                    # Layer 2: Staging
+├── 03_silver/                    # Layer 3: Cleaned & normalized
+├── 04_gold/                      # Layer 4: Dimensional model
+├── 05_serving/                   # Layer 5: Analytics layer
 └── scripts/                      # Pipeline utilities
 ```
 
@@ -51,7 +51,7 @@ data_modeling/
 - [x] Create `CLAUDE.md` with project context and conventions
 - [x] Create `README.md` with workbook overview
 - [x] Create `requirements.txt` with dependencies
-- [x] Create layer directories (00_raw through 04_serving)
+- [x] Create layer directories (01_raw through 05_serving)
 - [x] Create scripts directory
 
 ---

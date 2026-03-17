@@ -1,4 +1,4 @@
-# Phase 4: Silver Layer
+# Phase 3: Silver Layer
 
 **Status:** Pending
 
@@ -14,10 +14,10 @@ Transform bronze data into clean, normalized (3NF) tables with proper data types
 
 | File | Purpose |
 |------|---------|
-| `02_silver/01_create_tables.sql` | DDL for silver tables with constraints |
-| `02_silver/02_transform_data.sql` | SQL transformations from bronze |
-| `02_silver/03_create_indexes.sql` | Performance indexes |
-| `02_silver/silver.db` | SQLite database (generated) |
+| `03_silver/01_create_tables.sql` | DDL for silver tables with constraints |
+| `03_silver/02_transform_data.sql` | SQL transformations from bronze |
+| `03_silver/03_create_indexes.sql` | Performance indexes |
+| `03_silver/silver.db` | SQLite database (generated) |
 
 ---
 
@@ -167,7 +167,7 @@ WHERE NOT EXISTS (
 ## Indexes
 
 ```sql
--- 02_silver/03_create_indexes.sql
+-- 03_silver/03_create_indexes.sql
 
 -- Listener lookups
 CREATE INDEX idx_listeners_email ON listeners(email);
@@ -206,9 +206,9 @@ CREATE TABLE silver_rejected_records (
 
 ## Tasks
 
-- [ ] Create `02_silver/01_create_tables.sql`
-- [ ] Create `02_silver/02_transform_data.sql`
-- [ ] Create `02_silver/03_create_indexes.sql`
+- [ ] Create `03_silver/01_create_tables.sql`
+- [ ] Create `03_silver/02_transform_data.sql`
+- [ ] Create `03_silver/03_create_indexes.sql`
 - [ ] Run DDL to create tables
 - [ ] Execute transformations
 - [ ] Create indexes

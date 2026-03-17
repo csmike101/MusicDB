@@ -23,11 +23,11 @@ This is a tutorial-style workbook demonstrating **medallion architecture** (Raw 
 
 | Layer | Directory | Purpose | Key Concepts |
 |-------|-----------|---------|--------------|
-| **Raw** | `00_raw/` | Generated source data | JSON, CSV formats; intentional data quality issues |
-| **Bronze** | `01_bronze/` | Staging | All TEXT columns, audit columns (_source_file, _loaded_at, _row_hash), no constraints |
-| **Silver** | `02_silver/` | Cleaned & normalized | 3NF, proper types, constraints, deduplication, FK validation |
-| **Gold** | `03_gold/` | Dimensional model | Star schema, facts, dimensions, surrogate keys, aggregates |
-| **Serving** | `04_serving/` | Analytics-ready | Semantic views, Year-in-Review queries, JSON exports |
+| **Raw** | `01_raw/` | Generated source data | JSON, CSV formats; intentional data quality issues |
+| **Bronze** | `02_bronze/` | Staging | All TEXT columns, audit columns (_source_file, _loaded_at, _row_hash), no constraints |
+| **Silver** | `03_silver/` | Cleaned & normalized | 3NF, proper types, constraints, deduplication, FK validation |
+| **Gold** | `04_gold/` | Dimensional model | Star schema, facts, dimensions, surrogate keys, aggregates |
+| **Serving** | `05_serving/` | Analytics-ready | Semantic views, Year-in-Review queries, JSON exports |
 
 ## Project Structure
 
@@ -39,19 +39,19 @@ data_modeling/
 ├── requirements.txt       # Python dependencies
 │
 ├── plans/                 # Detailed phase documentation
-│   ├── 01_foundation.md
-│   ├── 02_raw_layer.md
-│   ├── 03_bronze_layer.md
-│   ├── 04_silver_layer.md
-│   ├── 05_gold_layer.md
-│   ├── 06_serving_layer.md
-│   └── 07_integration.md
+│   ├── 00_foundation.md
+│   ├── 01_raw_layer.md
+│   ├── 02_bronze_layer.md
+│   ├── 03_silver_layer.md
+│   ├── 04_gold_layer.md
+│   ├── 05_serving_layer.md
+│   └── 06_integration.md
 │
-├── 00_raw/                # Layer 0: Raw data generation
-├── 01_bronze/             # Layer 1: Staging (bronze.db)
-├── 02_silver/             # Layer 2: Cleaned & normalized (silver.db)
-├── 03_gold/               # Layer 3: Dimensional model (gold.db)
-├── 04_serving/            # Layer 4: Analytics layer (serving.db)
+├── 01_raw/                # Raw data generation
+├── 02_bronze/             # Staging (bronze.db)
+├── 03_silver/             # Cleaned & normalized (silver.db)
+├── 04_gold/               # Dimensional model (gold.db)
+├── 05_serving/            # Analytics layer (serving.db)
 └── scripts/               # Pipeline utilities (run_all.py, validate.py)
 ```
 
@@ -144,13 +144,13 @@ This project is implemented one phase at a time. **Each phase must be reviewed a
 
 | Phase | Plan File | Description |
 |-------|-----------|-------------|
-| 1 | `plans/01_foundation.md` | Project setup |
-| 2 | `plans/02_raw_layer.md` | Data generation |
-| 3 | `plans/03_bronze_layer.md` | Staging tables |
-| 4 | `plans/04_silver_layer.md` | Cleaned & normalized |
-| 5 | `plans/05_gold_layer.md` | Dimensional model |
-| 6 | `plans/06_serving_layer.md` | Analytics views |
-| 7 | `plans/07_integration.md` | Pipeline scripts |
+| 0 | `plans/00_foundation.md` | Project setup |
+| 1 | `plans/01_raw_layer.md` | Data generation |
+| 2 | `plans/02_bronze_layer.md` | Staging tables |
+| 3 | `plans/03_silver_layer.md` | Cleaned & normalized |
+| 4 | `plans/04_gold_layer.md` | Dimensional model |
+| 5 | `plans/05_serving_layer.md` | Analytics views |
+| 6 | `plans/06_integration.md` | Pipeline scripts |
 
 ### For Each Phase
 
@@ -171,11 +171,11 @@ Each phase includes verification steps. Do not mark a phase complete until:
 When a plan file is updated (schema changes, new fields, etc.), also update:
 
 1. **Layer README** - Each layer directory has a `README.md` explaining its data:
-   - `00_raw/README.md` - Entity schemas, file formats, quality issues
-   - `01_bronze/README.md` - Bronze table schemas, audit columns
-   - `02_silver/README.md` - Cleaned schemas, transformation logic
-   - `03_gold/README.md` - Dimensional model, star schema
-   - `04_serving/README.md` - Views, analytics queries
+   - `01_raw/README.md` - Entity schemas, file formats, quality issues
+   - `02_bronze/README.md` - Bronze table schemas, audit columns
+   - `03_silver/README.md` - Cleaned schemas, transformation logic
+   - `04_gold/README.md` - Dimensional model, star schema
+   - `05_serving/README.md` - Views, analytics queries
 
 2. **Downstream plans** - If schema changes affect later phases, update those plan files
 

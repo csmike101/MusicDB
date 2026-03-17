@@ -1,4 +1,4 @@
-# Phase 6: Serving Layer
+# Phase 5: Serving Layer
 
 **Status:** Pending
 
@@ -14,10 +14,10 @@ Create analytics-ready views and queries for the "Year in Review" (Spotify Wrapp
 
 | File | Purpose |
 |------|---------|
-| `04_serving/01_create_views.sql` | Semantic views for analytics |
-| `04_serving/02_year_in_review.sql` | Year-in-Review queries |
-| `04_serving/03_export_reports.py` | Export results to JSON/CSV |
-| `04_serving/serving.db` | SQLite database (generated, attaches gold.db) |
+| `05_serving/01_create_views.sql` | Semantic views for analytics |
+| `05_serving/02_year_in_review.sql` | Year-in-Review queries |
+| `05_serving/03_export_reports.py` | Export results to JSON/CSV |
+| `05_serving/serving.db` | SQLite database (generated, attaches gold.db) |
 
 ---
 
@@ -269,7 +269,7 @@ ORDER BY l.listener_id, stream_count DESC;
 ## Export Script Design
 
 ```python
-# 04_serving/03_export_reports.py
+# 05_serving/03_export_reports.py
 
 import sqlite3
 import json
@@ -303,16 +303,16 @@ def export_year_in_review(db_path: str, output_dir: str):
     conn.close()
 
 if __name__ == "__main__":
-    export_year_in_review("04_serving/serving.db", "04_serving/reports")
+    export_year_in_review("05_serving/serving.db", "05_serving/reports")
 ```
 
 ---
 
 ## Tasks
 
-- [ ] Create `04_serving/01_create_views.sql`
-- [ ] Create `04_serving/02_year_in_review.sql`
-- [ ] Create `04_serving/03_export_reports.py`
+- [ ] Create `05_serving/01_create_views.sql`
+- [ ] Create `05_serving/02_year_in_review.sql`
+- [ ] Create `05_serving/03_export_reports.py`
 - [ ] Create semantic views
 - [ ] Test Year-in-Review queries
 - [ ] Export sample reports for a few listeners
@@ -340,7 +340,7 @@ SELECT * FROM v_listener_summary LIMIT 5;
 
 ### Sample Output Files
 ```
-04_serving/
+05_serving/
 ├── reports/
 │   ├── listener_001_wrapped.json
 │   ├── listener_002_wrapped.json
