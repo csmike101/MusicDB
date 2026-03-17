@@ -12,13 +12,13 @@ Generate realistic music streaming data with intentional data quality issues for
 
 ## Files to Create
 
-| File | Purpose |
-|------|---------|
-| `00_raw/generate_data.py` | Main data generation script |
-| `00_raw/data/listeners.json` | ~50 listener profiles |
-| `00_raw/data/artists.json` | ~100 artist records |
-| `00_raw/data/tracks.json` | ~1000 track records |
-| `00_raw/data/streams.csv` | ~100k stream events |
+| File | Format | Purpose |
+|------|--------|---------|
+| `00_raw/generate_data.py` | Python | Main data generation script |
+| `00_raw/data/listeners.json` | JSON | ~50 listener profiles |
+| `00_raw/data/artists.json` | JSON | ~100 artist records |
+| `00_raw/data/tracks.json` | JSON | ~1000 track records |
+| `00_raw/data/streams.csv` | CSV | ~100k stream events |
 
 ---
 
@@ -126,24 +126,24 @@ DEVICE_TYPES = ["mobile", "desktop", "tablet", "smart_speaker", "web"]
 
 ## Tasks
 
-- [x] Create `generate_data.py` script
-- [x] Implement listener generation with nullable city
-- [x] Implement artist generation with genre casing issues
-- [x] Implement track generation with FK issues and date variations
-- [x] Implement stream generation with duplicates
-- [x] Add whitespace issues to name fields
+- [x] Update `generate_data.py` script with revised schema
+- [x] Implement listener generation with birth_date, first_name, last_name
+- [x] Implement artist generation as JSON with monthly_listeners
+- [x] Implement track generation as JSON with duration_ms, explicit
+- [x] Implement stream generation with device_type, shuffle_mode, offline_mode
+- [x] Add all intentional data quality issues
 - [x] Generate all data files
-- [x] Verify data volumes match targets
+- [x] Verify data volumes and quality issues
 
 ---
 
 ## Verification
 
-- [x] `listeners.json` contains ~50 records
-- [x] `artists.json` contains ~100 records
-- [x] `tracks.json` contains ~1000 records
-- [x] `streams.csv` contains ~100k records
-- [x] Duplicate streams exist (~1%)
-- [x] Null values present in optional fields
-- [x] Genre casing inconsistencies present
-- [x] Some invalid track_ids in streams
+- [x] `listeners.json` contains 50 records with birth_date field
+- [x] `artists.json` contains 100 records with monthly_listeners
+- [x] `tracks.json` contains 1000 records with duration_ms and explicit
+- [x] `streams.csv` contains 100,999 records with shuffle_mode, offline_mode
+- [x] Duplicate streams: 999 (0.99%)
+- [x] Null values: 22% null cities, 14% null formed_year, 19.6% null albums
+- [x] Genre casing inconsistencies present (20 unique case-sensitive genres)
+- [x] Invalid track_ids: 508 (0.50%)
