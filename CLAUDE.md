@@ -165,3 +165,20 @@ Each phase includes verification steps. Do not mark a phase complete until:
 - All tasks are implemented
 - All verification queries pass
 - User has reviewed and approved
+
+### Keeping Documentation in Sync
+
+When a plan file is updated (schema changes, new fields, etc.), also update:
+
+1. **Layer README** - Each layer directory has a `README.md` explaining its data:
+   - `00_raw/README.md` - Entity schemas, file formats, quality issues
+   - `01_bronze/README.md` - Bronze table schemas, audit columns
+   - `02_silver/README.md` - Cleaned schemas, transformation logic
+   - `03_gold/README.md` - Dimensional model, star schema
+   - `04_serving/README.md` - Views, analytics queries
+
+2. **Downstream plans** - If schema changes affect later phases, update those plan files
+
+3. **CLAUDE.md** - Update this file if architecture or conventions change
+
+4. **PLAN.md** - Update status and summaries as phases complete
