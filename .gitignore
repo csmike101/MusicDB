@@ -22,8 +22,14 @@ build/
 01_raw/data/*.json
 01_raw/data/*.csv
 
-# SQLite databases (re-generate by running pipeline)
-*.db
+# SQLite databases in layer directories (re-generate by running pipeline)
+02_bronze/*.db
+03_silver/*.db
+04_gold/*.db
+05_serving/*.db
+
+# Include sample databases for sharing
+!sample_data/*.db
 
 # Generated reports (keep sample reports, ignore new ones)
 # Note: Initial sample reports are committed for demonstration
