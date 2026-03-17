@@ -250,7 +250,7 @@ sqlite3 silver.db "
 
 ---
 
-## Phase 4: Gold Layer (Coming Next)
+## Phase 4: Gold Layer
 
 > **Folder:** `04_gold/`
 > **Database:** `gold.db`
@@ -261,8 +261,8 @@ sqlite3 silver.db "
 Silver data is clean and trustworthy, but it's normalized—optimized for storage, not queries. Answering "What were the top 5 artists for each listener?" requires joining multiple tables and is slow at scale.
 
 The gold layer **denormalizes** data into a star schema with:
-- **Dimension tables** (`dim_listener`, `dim_artist`, `dim_track`, `dim_date`)
-- **Fact tables** (`fact_streams`)
+- **Dimension tables** (`dim_listener`, `dim_artist`, `dim_track`, `dim_date`, `dim_device`)
+- **Fact table** (`fact_streams`)
 - **Aggregate tables** (pre-computed daily/monthly summaries)
 
 ### What You'll Learn
@@ -273,7 +273,88 @@ The gold layer **denormalizes** data into a star schema with:
 4. **Date dimensions** - Every analytics system needs one
 5. **Pre-aggregation** - Trading storage for query speed
 
-*Implementation coming in Phase 4...*
+### The Star Schema
+
+```
+                    ┌─────────────┐
+                    │  dim_date   │
+                    │  (365 rows) │
+                    └──────┬──────┘
+                           │
+┌─────────────┐     ┌──────┴──────┐     ┌─────────────┐
+│ dim_listener│─────│ fact_streams│─────│  dim_track  │
+│  (50 rows)  │     │ (99,493)    │     │ (1000 rows) │
+└─────────────┘     └──────┬──────┘     └──────┬──────┘
+                           │                   │
+                    ┌──────┴──────┐     ┌──────┴──────┐
+                    │ dim_device  │     │ dim_artist  │
+                    │  (5 rows)   │     │ (100 rows)  │
+                    └─────────────┘     └─────────────┘
+```
+
+### Derived Attributes
+
+Instead of calculating age every query, we pre-compute `age_group`:
+
+```sql
+CASE
+    WHEN age < 18 THEN 'Under 18'
+    WHEN age BETWEEN 18 AND 24 THEN '18-24'
+    WHEN age BETWEEN 25 AND 34 THEN '25-34'
+    -- ...
+END AS age_group
+```
+
+Similarly for `popularity_tier` (emerging → superstar) and `duration_bucket` (short/medium/long).
+
+### Pre-aggregation: The Performance Secret
+
+The `agg_daily_listener_streams` table pre-computes what would otherwise require scanning 99,493 fact rows:
+
+```sql
+-- Without pre-aggregation: scan all fact rows
+SELECT listener_key, DATE(streamed_at), COUNT(*), SUM(duration_played_ms)
+FROM fact_streams GROUP BY 1, 2;
+
+-- With pre-aggregation: instant lookup
+SELECT * FROM agg_daily_listener_streams WHERE listener_key = 42;
+```
+
+### Explore It Yourself
+
+```bash
+cd 04_gold
+
+# See the star schema in action
+sqlite3 gold.db "
+  SELECT 'dim_date', COUNT(*) FROM dim_date
+  UNION ALL SELECT 'dim_listener', COUNT(*) FROM dim_listener
+  UNION ALL SELECT 'dim_artist', COUNT(*) FROM dim_artist
+  UNION ALL SELECT 'dim_track', COUNT(*) FROM dim_track
+  UNION ALL SELECT 'dim_device', COUNT(*) FROM dim_device
+  UNION ALL SELECT 'fact_streams', COUNT(*) FROM fact_streams;
+"
+
+# Check derived attributes
+sqlite3 gold.db "SELECT age_group, COUNT(*) FROM dim_listener GROUP BY age_group;"
+sqlite3 gold.db "SELECT popularity_tier, COUNT(*) FROM dim_artist GROUP BY popularity_tier;"
+
+# Query with star schema joins
+sqlite3 gold.db "
+  SELECT dl.full_name, da.name as artist, COUNT(*) as plays
+  FROM fact_streams f
+  JOIN dim_listener dl ON f.listener_key = dl.listener_key
+  JOIN dim_track dt ON f.track_key = dt.track_key
+  JOIN dim_artist da ON dt.artist_key = da.artist_key
+  GROUP BY dl.listener_key, da.artist_key
+  ORDER BY plays DESC
+  LIMIT 10;
+"
+```
+
+**Question to ponder:** Why do we use integer surrogate keys (`listener_key`) instead of the original UUIDs (`listener_id`)?
+
+> **Deep dive:** See `04_gold/README.md` for complete schema details and verification queries.
 
 ---
 
