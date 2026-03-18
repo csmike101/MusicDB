@@ -7,6 +7,7 @@ logging, and path management across all pipeline scripts.
 
 import sqlite3
 import logging
+import os
 import sys
 from pathlib import Path
 from datetime import datetime
@@ -72,22 +73,39 @@ def execute_sql_file(db_path: Path, sql_file: Path) -> None:
     """
     Execute a SQL file against a database.
 
+    Changes to the SQL file's directory before execution so that relative
+    paths in ATTACH DATABASE statements resolve correctly.
+
     Args:
         db_path: Path to the SQLite database
         sql_file: Path to the SQL file to execute
     """
     logger.info(f"Executing {sql_file.name} on {db_path.name}")
-    conn = sqlite3.connect(db_path)
-    with open(sql_file, 'r', encoding='utf-8') as f:
-        sql = f.read()
+
+    # Resolve to absolute paths before changing directory
+    db_path = Path(db_path).resolve()
+    sql_file = Path(sql_file).resolve()
+
+    # Save current directory and change to SQL file's directory
+    # This ensures relative paths in ATTACH DATABASE work correctly
+    original_dir = os.getcwd()
+    os.chdir(sql_file.parent)
+
     try:
-        conn.executescript(sql)
-        conn.commit()
-    except sqlite3.Error as e:
-        logger.error(f"SQL execution failed: {e}")
-        raise
+        conn = sqlite3.connect(db_path)
+        with open(sql_file, 'r', encoding='utf-8') as f:
+            sql = f.read()
+        try:
+            conn.executescript(sql)
+            conn.commit()
+        except sqlite3.Error as e:
+            logger.error(f"SQL execution failed: {e}")
+            raise
+        finally:
+            conn.close()
     finally:
-        conn.close()
+        # Always restore original directory
+        os.chdir(original_dir)
 
 
 def get_row_count(db_path: Path, table: str) -> int:

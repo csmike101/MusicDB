@@ -1,51 +1,51 @@
 listener_id,listener_name,subscription_type,country,total_streams,total_hours,unique_artists,unique_tracks,unique_genres,full_play_rate,listening_percentile,listening_personality,top_genre
-ffa2606a-5bcb-4332-9869-7cb9e6f2d22e,Linda Hogan,premium,Germany,2649,171.6,100,936,18,70.0,100.0,Explorer,Punk
-bd98a8c4-c2be-4039-aafe-7ce3e484354a,Angel Hill,premium,United States,2673,169.9,100,914,18,70.3,98.0,Explorer,Punk
-b19552ac-9dbd-4d32-928a-564a34e5e61f,Charles Lewis,premium,Spain,2593,168.2,100,914,18,71.5,96.0,Explorer,Punk
-b0e4e2df-5b39-4afa-bbc8-ed37c865cc68,Catherine Morris,premium,Mexico,2597,167.3,100,927,18,71.4,94.0,Explorer,Punk
-b2d1963d-a08b-4c12-9305-b398cdeff28a,Cynthia Baker,premium,Sweden,2631,166.0,100,929,18,70.1,92.0,Explorer,Country
-59077715-8cf4-440b-bf02-213eafaab8cc,Noah Mayo,premium,Germany,2583,165.0,100,931,18,70.5,88.0,Explorer,Punk
-0fd5478a-8080-409d-b7b7-605282ebe52c,Erica Rubio,premium,United Kingdom,2642,165.0,100,922,18,70.5,90.0,Explorer,Punk
-48e7d45b-a4c5-452c-8a61-8f773fdef8f7,Hannah Marquez,premium,Spain,2557,164.4,100,908,18,70.5,84.0,Explorer,Country
-6f9cd6c5-a39f-45a3-a07d-af20724d5ce7,Cynthia Rogers,premium,Italy,2581,164.4,100,920,18,70.7,86.0,Explorer,Country
-e38a25b0-8116-480b-b2fe-642c05d44248,Angela Chapman,premium,France,2599,164.1,100,923,18,70.3,80.0,Explorer,Punk
-53760551-003a-4458-bed6-ecb32f19c1d2,Margaret Vargas,premium,Netherlands,2594,164.1,100,927,18,69.1,82.0,Explorer,Country
-bc242280-3aad-4fff-8a44-e8f9035a7116,Michael Hicks,premium,Australia,2588,163.2,100,931,18,70.1,76.0,Explorer,Punk
-af29fbc8-d7a6-41c8-8207-e08fdf4aaceb,David Walls,premium,South Korea,2557,163.2,100,914,18,69.5,78.0,Explorer,Country
-86f7975d-6ef2-480e-9176-91ab40e310ed,Paul Carlson,premium,Spain,2581,163.1,100,916,18,69.0,73.0,Explorer,Country
-ee759191-3383-407c-adff-e19482b36cfb,Lisa Evans,premium,United States,2585,162.1,100,923,18,70.1,71.0,Explorer,Country
-b0d56492-17ad-43c7-b801-d2fd79268b80,Scott Thornton,premium,Netherlands,2593,161.9,100,931,18,69.0,69.0,Explorer,Country
-3033f856-a37d-475f-a222-f136a8793d87,Jose Richards,premium,United Kingdom,2543,161.3,100,934,18,68.5,67.0,Explorer,Punk
-2f898414-fc20-48ed-a82b-31ff1d1ade7a,Jennifer Miles,premium,Netherlands,2520,161.1,100,930,18,70.2,65.0,Explorer,Country
-44c02580-840a-4496-ac2d-d2fa318bcde5,Benjamin Ruiz,premium,Mexico,2524,160.4,100,923,18,69.6,63.0,Explorer,Punk
-fc067a03-1baf-41c5-85ca-5bd21bf2a1e8,Jesse Garcia,premium,United States,2529,159.2,100,921,18,69.8,61.0,Explorer,Punk
-21b3df06-7a3a-4a08-a46b-8693c45342d2,Mark Owens,free,Sweden,1623,106.9,100,795,18,71.0,59.0,Explorer,Punk
-dcaea555-325a-4375-8b28-c15115ec8a68,Jennifer Lewis,free,South Korea,1626,106.4,100,799,18,71.4,57.0,Explorer,Punk
-dfeafd66-b898-47c6-ac48-4ebd840a371d,Nathaniel Martin,free,United Kingdom,1683,104.8,100,819,18,69.5,55.0,Explorer,Country
-1f29914e-4d15-4d19-afda-e9d4f8931da8,John Alvarez,free,Australia,1652,104.5,100,797,18,70.6,53.0,Explorer,Punk
-c78f8d3b-c3d9-44d3-8718-1d4620cd9c0e,Peter Snow,free,Australia,1602,104.1,100,802,18,69.4,51.0,Explorer,Punk
-e3253acc-6e45-46fe-a393-5fdc8a9d65e1,Francisco Marsh,free,Germany,1610,103.9,100,792,18,69.6,47.0,Explorer,Punk
-695b956a-4acd-45bd-9fb3-7ee266cd7ed0,John Gonzales,free,Mexico,1625,103.9,100,809,18,68.5,49.0,Explorer,Punk
-60de5af1-8810-444a-85e0-88d367d75a75,Teresa Gray,free,Netherlands,1606,103.5,100,805,18,71.2,45.0,Explorer,Punk
-fd609db3-0355-4454-b0c3-3cad4507c883,Holly Wang,free,Mexico,1622,102.9,100,809,18,69.5,43.0,Explorer,Punk
-458ffbb3-0080-4865-a0ec-fc1cccf7aacb,Kristin Graham,free,India,1574,102.6,100,780,18,70.8,41.0,Explorer,Country
-495b1143-1577-4107-bfdb-5bd287259670,Jennifer Wagner,free,South Korea,1619,101.8,100,797,18,69.8,37.0,Explorer,Punk
-527da10d-aaf5-439d-bc5e-a954adab2211,Ryan Chavez,free,Italy,1572,101.8,100,792,18,71.2,39.0,Explorer,Punk
-fce4d186-f614-4f30-8320-ce192ab34c32,Ronald Thompson,free,United States,1600,101.2,100,785,18,69.1,35.0,Explorer,Punk
-a696d10d-ec6c-4537-803c-4fbb45b3496c,Jeffrey Jones,free,Brazil,1615,100.6,100,807,18,70.1,31.0,Explorer,Country
-8b7b4d7d-c594-447d-b342-15f36c46430c,Kenneth Martinez,free,Canada,1596,100.6,100,800,18,68.8,33.0,Explorer,Punk
-6a225d5e-2538-4878-927b-034a554bdb43,Beth Daniels,free,Spain,1622,100.4,100,795,18,69.7,29.0,Explorer,Punk
-bc8e020e-6252-4e6d-a46e-bb317d15490a,Richard Brown,free,Canada,1610,100.3,100,802,18,68.3,22.0,Explorer,Country
-15315954-edb2-4052-a5bf-682ffeda1f10,Emily Joyce,free,Japan,1620,100.3,100,798,18,71.0,24.0,Explorer,Punk
-19800355-1cfd-4cdd-b5ba-cbfc9c993246,Nancy Jones,free,Australia,1602,100.3,100,803,18,69.4,27.0,Explorer,Country
-f8387e7c-baa0-4aa3-978f-33f605caca30,Tony Kelly,free,France,1571,100.0,100,777,18,69.6,20.0,Explorer,Country
-35b10d32-face-4dd5-976e-58db9d416a25,Olivia Johnston,free,Germany,1573,99.6,100,799,18,70.2,18.0,Explorer,Punk
-fb3778d5-047f-452d-b3ab-f9adb0ccabc2,Cynthia Poole,free,Japan,1576,99.3,100,767,18,70.2,16.0,Explorer,Country
-907e6bd1-6d3e-4cb9-b589-b4c11ed88886,Lauren Ramsey,free,Italy,1549,99.1,100,796,18,70.7,14.0,Explorer,Country
-1cc7732f-44ce-4c89-8856-6da0a9d24631,Joshua Lewis,free,Germany,1558,98.9,100,784,18,70.3,12.0,Explorer,Country
-d0b3f342-1cde-4a92-9f10-84faebc88f57,Gloria Bentley,free,Sweden,1552,98.4,100,782,18,70.0,10.0,Explorer,Country
-ab513d5b-1dc6-4257-a742-af9760cb0b07,Joe Wilson,free,Canada,1557,97.4,100,781,18,68.1,8.0,Explorer,Country
-1de6be50-462f-4551-9c6a-b319ad737a78,Rachel Flynn,free,India,1555,97.0,100,795,18,70.3,4.0,Explorer,Punk
-e5c917e2-e5a8-401a-98cb-1a3a4792c54b,Todd Jones,free,Australia,1525,97.0,100,775,18,69.8,6.0,Explorer,Country
-e643031b-547d-45d6-81c2-dd18a508bd29,Leon Baker,free,Italy,1534,96.4,100,779,18,69.7,2.0,Explorer,Punk
-eac23c97-aded-408a-9a70-8fabe144d7fd,Brent Gray,free,Germany,1545,95.7,100,775,18,70.3,0.0,Explorer,Country
+01d68e17-7985-4a15-a402-bf1eee2d98f6,Linda Hogan,premium,Germany,2649,171.6,100,936,18,70.0,100.0,Explorer,Punk
+602b5586-71ad-47d0-94c5-ebab64dc2a35,Angel Hill,premium,United States,2673,169.9,100,914,18,70.3,98.0,Explorer,Punk
+2486bb59-cee0-460a-8348-0566bf549d69,Charles Lewis,premium,Spain,2593,168.2,100,914,18,71.5,96.0,Explorer,Punk
+3a6a0d60-8a59-4be8-be9a-aed88637d0e2,Catherine Morris,premium,Mexico,2597,167.3,100,927,18,71.4,94.0,Explorer,Punk
+744a2f3c-a078-4011-932d-57fc04c95e4b,Cynthia Baker,premium,Sweden,2631,166.0,100,929,18,70.1,92.0,Explorer,Country
+1393cf6c-1cbd-4752-b52f-a0920d77a727,Noah Mayo,premium,Germany,2583,165.0,100,931,18,70.5,88.0,Explorer,Punk
+ec65f0b1-7126-484a-b152-ad3c3a0a7d9c,Erica Rubio,premium,United Kingdom,2642,165.0,100,922,18,70.5,90.0,Explorer,Punk
+818ad3bb-8993-439a-856b-52b3aad4267d,Hannah Marquez,premium,Spain,2557,164.4,100,908,18,70.5,84.0,Explorer,Country
+d48d2209-e7fa-4fa9-91e4-014baf8615ec,Cynthia Rogers,premium,Italy,2581,164.4,100,920,18,70.7,86.0,Explorer,Country
+2608755c-b98f-40b2-baea-ca7105ebed6d,Angela Chapman,premium,France,2599,164.1,100,923,18,70.3,80.0,Explorer,Punk
+8ec9934e-ec67-4c09-adc9-4a22ae08287e,Margaret Vargas,premium,Netherlands,2594,164.1,100,927,18,69.1,82.0,Explorer,Country
+382ed9ae-e616-4379-9e79-1a54c7de7363,Michael Hicks,premium,Australia,2588,163.2,100,931,18,70.1,76.0,Explorer,Punk
+babeb55b-c132-438c-96ca-1c1e360e8fae,David Walls,premium,South Korea,2557,163.2,100,914,18,69.5,78.0,Explorer,Country
+11ad88e3-dcbb-493a-8d0d-5865e2e080c5,Paul Carlson,premium,Spain,2581,163.1,100,916,18,69.0,73.0,Explorer,Country
+b9f43465-1188-4230-a0f5-52bbd8fa9807,Lisa Evans,premium,United States,2585,162.1,100,923,18,70.1,71.0,Explorer,Country
+a887f383-c739-49d4-b04e-46b184ba95e2,Scott Thornton,premium,Netherlands,2593,161.9,100,931,18,69.0,69.0,Explorer,Country
+f99fb75e-0433-4e2c-9ab4-f5c879756ebb,Jose Richards,premium,United Kingdom,2543,161.3,100,934,18,68.5,67.0,Explorer,Punk
+6d09ceb1-db33-4c43-b237-8a253841c96f,Jennifer Miles,premium,Netherlands,2520,161.1,100,930,18,70.2,65.0,Explorer,Country
+e5cd3512-c4d2-4ef7-9e60-dd7fc2636bd6,Benjamin Ruiz,premium,Mexico,2524,160.4,100,923,18,69.6,63.0,Explorer,Punk
+db633d84-7f5e-401a-993c-f1e3389d9880,Jesse Garcia,premium,United States,2529,159.2,100,921,18,69.8,61.0,Explorer,Punk
+2575c30f-181f-45cc-a45a-69f97565d96a,Mark Owens,free,Sweden,1623,106.9,100,795,18,71.0,59.0,Explorer,Punk
+382b439a-9af2-4848-a6d0-d6aeb1cacf94,Jennifer Lewis,free,South Korea,1626,106.4,100,799,18,71.4,57.0,Explorer,Punk
+8241f45a-26bc-4e35-a3f2-5a451a6d67f8,Nathaniel Martin,free,United Kingdom,1683,104.8,100,819,18,69.5,55.0,Explorer,Country
+dbd0df65-997b-44cf-8d6e-0f88c4aa1b68,John Alvarez,free,Australia,1652,104.5,100,797,18,70.6,53.0,Explorer,Punk
+6644fbda-eef0-4d3a-82a4-d4c528be502e,Peter Snow,free,Australia,1602,104.1,100,802,18,69.4,51.0,Explorer,Punk
+e872452d-d196-4696-9b8f-b6c589333ed7,Francisco Marsh,free,Germany,1610,103.9,100,792,18,69.6,47.0,Explorer,Punk
+a640bef0-5d24-4585-9456-6f9b31f2c305,John Gonzales,free,Mexico,1625,103.9,100,809,18,68.5,49.0,Explorer,Punk
+626017b0-fb1c-484f-9b9e-8c3aa45d6286,Teresa Gray,free,Netherlands,1606,103.5,100,805,18,71.2,45.0,Explorer,Punk
+392bd031-03eb-4003-81e5-2e024df53b10,Holly Wang,free,Mexico,1622,102.9,100,809,18,69.5,43.0,Explorer,Punk
+9490b74e-4f54-42de-bd6c-61995803fa31,Kristin Graham,free,India,1574,102.6,100,780,18,70.8,41.0,Explorer,Country
+e9b6b276-99fa-467a-ba31-f11c4ca2ac23,Jennifer Wagner,free,South Korea,1619,101.8,100,797,18,69.8,37.0,Explorer,Punk
+45335d6b-f051-4f00-9bc2-83896ca0f3c5,Ryan Chavez,free,Italy,1572,101.8,100,792,18,71.2,39.0,Explorer,Punk
+6113eafb-4181-4779-b875-b0da707cdc80,Ronald Thompson,free,United States,1600,101.2,100,785,18,69.1,35.0,Explorer,Punk
+e707c7a9-6fc6-4f89-a57c-84ab10549448,Jeffrey Jones,free,Brazil,1615,100.6,100,807,18,70.1,31.0,Explorer,Country
+0ef6c378-4cf6-4122-ab79-699f55e0af53,Kenneth Martinez,free,Canada,1596,100.6,100,800,18,68.8,33.0,Explorer,Punk
+40219bdb-48e2-4fc4-8098-77437b6f6df8,Beth Daniels,free,Spain,1622,100.4,100,795,18,69.7,29.0,Explorer,Punk
+af9f6403-c765-4f3f-98ed-7f8f5a75e895,Richard Brown,free,Canada,1610,100.3,100,802,18,68.3,22.0,Explorer,Country
+6f8e1fae-9662-43de-aae3-08953aacca52,Emily Joyce,free,Japan,1620,100.3,100,798,18,71.0,24.0,Explorer,Punk
+ddaba788-37f8-4298-a6f4-811b41ddd4d4,Nancy Jones,free,Australia,1602,100.3,100,803,18,69.4,27.0,Explorer,Country
+44aba7fe-df2b-4305-a70b-5f95fe742ff9,Tony Kelly,free,France,1571,100.0,100,777,18,69.6,20.0,Explorer,Country
+77fa6fb2-19ba-4f42-b42d-9adfd9afdb7f,Olivia Johnston,free,Germany,1573,99.6,100,799,18,70.2,18.0,Explorer,Punk
+733e353e-7e91-409c-8de2-989f9970c736,Cynthia Poole,free,Japan,1576,99.3,100,767,18,70.2,16.0,Explorer,Country
+963665da-4792-4fe9-9bd8-fa65ad6ec193,Lauren Ramsey,free,Italy,1549,99.1,100,796,18,70.7,14.0,Explorer,Country
+f628a069-bf73-4dc2-af87-8c68a95b01a3,Joshua Lewis,free,Germany,1558,98.9,100,784,18,70.3,12.0,Explorer,Country
+b6a3dbc1-7204-4248-9c77-2f992896855c,Gloria Bentley,free,Sweden,1552,98.4,100,782,18,70.0,10.0,Explorer,Country
+320b9fb9-7678-4d43-91ac-8bb0d0818af0,Joe Wilson,free,Canada,1557,97.4,100,781,18,68.1,8.0,Explorer,Country
+2a3147c9-c220-4349-a861-2d63a70287d0,Rachel Flynn,free,India,1555,97.0,100,795,18,70.3,4.0,Explorer,Punk
+f35126c8-d3a5-4398-8eab-1f5a413cf341,Todd Jones,free,Australia,1525,97.0,100,775,18,69.8,6.0,Explorer,Country
+9c90e19f-5998-42ee-bfd9-74d631e11f72,Leon Baker,free,Italy,1534,96.4,100,779,18,69.7,2.0,Explorer,Punk
+3fdefe70-abf9-4511-b6a1-acda3c16edd8,Brent Gray,free,Germany,1545,95.7,100,775,18,70.3,0.0,Explorer,Country

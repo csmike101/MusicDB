@@ -19,6 +19,11 @@ import csv
 from pathlib import Path
 from datetime import datetime
 
+# Resolve paths relative to this script's location
+SCRIPT_DIR = Path(__file__).parent.resolve()
+DEFAULT_DB = SCRIPT_DIR.parent / "04_gold" / "gold.db"
+DEFAULT_OUTPUT = SCRIPT_DIR / "reports"
+
 
 def dict_factory(cursor: sqlite3.Cursor, row: tuple) -> dict:
     """Convert SQLite rows to dictionaries."""
@@ -290,12 +295,12 @@ def main():
         description='Export Year-in-Review reports from the serving layer'
     )
     parser.add_argument(
-        '--db', default='../04_gold/gold.db',
-        help='Path to gold database (default: ../04_gold/gold.db)'
+        '--db', default=str(DEFAULT_DB),
+        help=f'Path to gold database (default: {DEFAULT_DB})'
     )
     parser.add_argument(
-        '--output', default='reports',
-        help='Output directory for JSON reports (default: reports)'
+        '--output', default=str(DEFAULT_OUTPUT),
+        help=f'Output directory for JSON reports (default: {DEFAULT_OUTPUT})'
     )
     parser.add_argument(
         '--limit', type=int, default=None,

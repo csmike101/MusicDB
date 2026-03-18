@@ -10,6 +10,28 @@ This walkthrough guides you through building a complete data pipeline using **me
 
 ---
 
+## Platform Notes
+
+This walkthrough includes command-line examples using `sqlite3` and Unix tools (`head`, `cat`, `wc`). If you're on **Windows** or don't have these tools installed:
+
+**For sqlite3 queries**, use Python instead:
+```bash
+# Instead of: sqlite3 bronze.db "SELECT COUNT(*) FROM bronze_streams;"
+# Use:
+python -c "import sqlite3; print(sqlite3.connect('bronze.db').execute('SELECT COUNT(*) FROM bronze_streams').fetchone()[0])"
+```
+
+**For file inspection**, use Python:
+```bash
+# Instead of: head -5 data/streams.csv
+# Use:
+python -c "print(open('data/streams.csv').read().split('\n')[:5])"
+```
+
+Or simply open files in your text editor/IDE.
+
+---
+
 ## The Problem
 
 Open `01_raw/data/streams.csv` and look at the data. You'll notice:

@@ -21,19 +21,35 @@ This directory contains pre-generated SQLite databases for testing and explorati
 
 ## Usage
 
-### Option 1: Copy to Layer Directories
+### Option 1: Use Helper Script (Recommended)
 
 ```bash
 # From repository root
+python scripts/use_sample_data.py
+```
+
+### Option 2: Copy Manually
+
+```bash
+# From repository root (Unix/macOS)
 cp sample_data/bronze.db 02_bronze/
 cp sample_data/silver.db 03_silver/
 cp sample_data/gold.db 04_gold/
+
+# Windows (PowerShell)
+Copy-Item sample_data\bronze.db 02_bronze\
+Copy-Item sample_data\silver.db 03_silver\
+Copy-Item sample_data\gold.db 04_gold\
 ```
 
-### Option 2: Query Directly
+### Option 3: Query Directly
 
 ```bash
+# Using sqlite3 CLI (if installed)
 sqlite3 sample_data/gold.db "SELECT * FROM dim_artist LIMIT 10;"
+
+# Using Python (works everywhere)
+python -c "import sqlite3; c=sqlite3.connect('sample_data/gold.db'); print([r for r in c.execute('SELECT * FROM dim_artist LIMIT 10')])"
 ```
 
 ## Generate Fresh Data

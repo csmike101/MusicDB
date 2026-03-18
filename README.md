@@ -18,12 +18,15 @@ source venv/bin/activate     # macOS/Linux
 pip install -r requirements.txt
 
 # Option 1: Use sample data (instant)
-# Copy databases from sample_data/ to layer directories
+python scripts/use_sample_data.py
 
 # Option 2: Generate fresh data
 python scripts/run_all.py
 
-# Explore the data
+# Explore the data (Python - works everywhere)
+python -c "import sqlite3; c=sqlite3.connect('04_gold/gold.db'); print([r for r in c.execute('SELECT * FROM dim_artist LIMIT 5')])"
+
+# Or with sqlite3 CLI (if installed)
 sqlite3 04_gold/gold.db "SELECT * FROM dim_artist LIMIT 5;"
 ```
 
@@ -125,7 +128,7 @@ MusicDB/
 python scripts/run_all.py
 
 # Run specific layers
-python scripts/run_all.py --start silver --end gold
+python scripts/run_all.py --from silver --to gold
 
 # Validate data integrity
 python scripts/validate.py
