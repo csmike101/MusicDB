@@ -276,12 +276,44 @@ SELECT MIN(full_date), MAX(full_date), COUNT(*) FROM dim_date;
 -- Expected: 2025-01-01, 2025-12-31, 365
 ```
 
-### Expected Results
-| Table | Expected Rows |
-|-------|---------------|
-| dim_date | 365 |
-| dim_listener | ~50 |
-| dim_artist | ~100 |
-| dim_track | ~995 |
-| dim_device | 5 |
-| fact_streams | ~98.5k |
+### Expected Row Counts
+
+| Table | Expected | Source | Notes |
+|-------|----------|--------|-------|
+| dim_date | 365 | Generated | Full year 2025 calendar |
+| dim_listener | 50 | Silver listeners | 1:1 with surrogate keys |
+| dim_artist | 100 | Silver artists | 1:1 with surrogate keys |
+| dim_track | 1,000 | Silver tracks | 1:1 with surrogate keys |
+| dim_device | 5 | Enumerated | mobile, desktop, tablet, smart_speaker, web |
+| fact_streams | ~99,500 | Silver streams | 1:1 with dimension FKs |
+| agg_daily_listener_streams | ≤18,250 | fact_streams | 50 listeners × 365 days max |
+| agg_daily_track_streams | ≤365,000 | fact_streams | 1,000 tracks × 365 days max |
+| agg_monthly_genre_streams | ≤144 | fact_streams | 12 genres × 12 months |
+
+### Verification Queries
+
+```sql
+-- Dimension and fact counts
+SELECT 'dim_date' AS tbl, COUNT(*) AS cnt FROM dim_date
+UNION ALL SELECT 'dim_listener', COUNT(*) FROM dim_listener
+UNION ALL SELECT 'dim_artist', COUNT(*) FROM dim_artist
+UNION ALL SELECT 'dim_track', COUNT(*) FROM dim_track
+UNION ALL SELECT 'dim_device', COUNT(*) FROM dim_device
+UNION ALL SELECT 'fact_streams', COUNT(*) FROM fact_streams;
+
+-- Aggregate reconciliation (all should equal fact_streams total)
+SELECT 'fact_streams' AS source, COUNT(*) AS total FROM fact_streams
+UNION ALL SELECT 'agg_daily_listener', SUM(stream_count) FROM agg_daily_listener_streams
+UNION ALL SELECT 'agg_daily_track', SUM(stream_count) FROM agg_daily_track_streams
+UNION ALL SELECT 'agg_monthly_genre', SUM(stream_count) FROM agg_monthly_genre_streams;
+
+-- Verify no orphan FKs in fact table
+SELECT
+    (SELECT COUNT(*) FROM fact_streams f WHERE NOT EXISTS
+        (SELECT 1 FROM dim_listener d WHERE d.listener_key = f.listener_key)) AS orphan_listeners,
+    (SELECT COUNT(*) FROM fact_streams f WHERE NOT EXISTS
+        (SELECT 1 FROM dim_track d WHERE d.track_key = f.track_key)) AS orphan_tracks,
+    (SELECT COUNT(*) FROM fact_streams f WHERE NOT EXISTS
+        (SELECT 1 FROM dim_date d WHERE d.date_key = f.date_key)) AS orphan_dates;
+-- Expected: all 0
+```

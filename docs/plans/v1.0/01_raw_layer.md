@@ -137,6 +137,38 @@ DEVICE_TYPES = ["mobile", "desktop", "tablet", "smart_speaker", "web"]
 
 ---
 
+## Expected Row Counts
+
+| File | Expected | Tolerance | Notes |
+|------|----------|-----------|-------|
+| `listeners.json` | 50 | exact | `NUM_LISTENERS` config |
+| `artists.json` | 100 | exact | `NUM_ARTISTS` config |
+| `tracks.json` | 1,000 | exact | `NUM_TRACKS` config |
+| `streams.csv` | ~101,000 | ±1% | `NUM_STREAMS` + ~1% duplicates |
+
+### Data Quality Issues (Expected Rates)
+
+| Issue | Expected Rate | Actual |
+|-------|---------------|--------|
+| Duplicate streams | ~1% (~1,000) | 999 |
+| Null cities | ~15-20% | 22% |
+| Null formed_year | ~15% | 14% |
+| Null albums | ~15-20% | 19.6% |
+| Invalid track_ids | ~0.5% (~500) | 508 |
+| Genre casing variations | ~10% | Present (20 unique) |
+
+### Verification Commands
+
+```bash
+# Count records in each file
+wc -l 01_raw/data/streams.csv
+python -c "import json; print(len(json.load(open('01_raw/data/listeners.json'))))"
+python -c "import json; print(len(json.load(open('01_raw/data/artists.json'))))"
+python -c "import json; print(len(json.load(open('01_raw/data/tracks.json'))))"
+```
+
+---
+
 ## Verification
 
 - [x] `listeners.json` contains 50 records with birth_date field

@@ -205,7 +205,34 @@ HAVING COUNT(*) > 1
 LIMIT 10;
 ```
 
+### Expected Row Counts
+
+| Table | Expected | Match Raw? | Notes |
+|-------|----------|------------|-------|
+| bronze_listeners | 50 | Yes | 1:1 from `listeners.json` |
+| bronze_artists | 100 | Yes | 1:1 from `artists.json` |
+| bronze_tracks | 1,000 | Yes | 1:1 from `tracks.json` |
+| bronze_streams | ~101,000 | Yes | 1:1 from `streams.csv` (includes duplicates) |
+
+### Verification Query
+
+```sql
+-- Verify bronze row counts
+SELECT 'bronze_listeners' AS table_name, COUNT(*) AS row_count FROM bronze_listeners
+UNION ALL SELECT 'bronze_artists', COUNT(*) FROM bronze_artists
+UNION ALL SELECT 'bronze_tracks', COUNT(*) FROM bronze_tracks
+UNION ALL SELECT 'bronze_streams', COUNT(*) FROM bronze_streams;
+
+-- Verify duplicates are present (should find ~999)
+SELECT COUNT(*) AS duplicate_groups
+FROM (
+    SELECT _row_hash FROM bronze_streams
+    GROUP BY _row_hash HAVING COUNT(*) > 1
+);
+```
+
 ### Actual Results
+
 | Table | Rows | Notes |
 |-------|------|-------|
 | bronze_listeners | 50 | All loaded |

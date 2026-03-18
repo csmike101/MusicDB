@@ -32,8 +32,12 @@ A tutorial workbook demonstrating **medallion architecture** (Raw → Bronze →
 ## Quick Commands
 
 ```bash
-# Setup
+# Setup (Windows)
 python -m venv venv && venv\Scripts\activate
+pip install -r requirements.txt
+
+# Setup (macOS/Linux)
+python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
 # Run full pipeline

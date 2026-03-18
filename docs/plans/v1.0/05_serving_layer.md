@@ -321,29 +321,67 @@ if __name__ == "__main__":
 
 ---
 
-## Verification
+## Expected Row Counts
+
+### Semantic Views
+
+| View | Expected Rows | Source |
+|------|---------------|--------|
+| v_stream_details | ~99,500 | fact_streams (1:1 denormalized) |
+| v_listener_summary | 50 | One row per listener |
+| v_track_popularity | 1,000 | One row per track |
+| v_artist_popularity | 100 | One row per artist |
+| v_daily_platform_stats | 365 | One row per day |
+
+### Year-in-Review Views
+
+| View | Expected Rows | Calculation |
+|------|---------------|-------------|
+| v_top_artists_by_listener | 250 | 50 listeners × 5 top artists |
+| v_top_tracks_by_listener | 250 | 50 listeners × 5 top tracks |
+| v_top_genre_by_listener | 50 | One row per listener |
+| v_listening_personality | 50 | One row per listener |
+| v_year_in_review_summary | 50 | One row per listener |
+
+### Verification Queries
 
 ```sql
 -- View row counts
-SELECT 'v_stream_details' AS view_name, COUNT(*) FROM v_stream_details
+SELECT 'v_stream_details' AS view_name, COUNT(*) AS rows FROM v_stream_details
 UNION ALL SELECT 'v_listener_summary', COUNT(*) FROM v_listener_summary
-UNION ALL SELECT 'v_track_popularity', COUNT(*) FROM v_track_popularity;
+UNION ALL SELECT 'v_track_popularity', COUNT(*) FROM v_track_popularity
+UNION ALL SELECT 'v_top_artists_by_listener', COUNT(*) FROM v_top_artists_by_listener
+UNION ALL SELECT 'v_top_tracks_by_listener', COUNT(*) FROM v_top_tracks_by_listener;
 
--- Year-in-Review completeness
+-- Year-in-Review completeness (all listeners should have data)
 SELECT COUNT(DISTINCT listener_id) AS listeners_with_data
 FROM v_listener_summary
 WHERE total_streams > 0;
--- Should equal total listeners
+-- Expected: 50
 
+-- Verify top-N rankings are complete
+SELECT listener_id, COUNT(*) AS artist_count
+FROM v_top_artists_by_listener
+GROUP BY listener_id
+HAVING COUNT(*) < 5;
+-- Expected: empty (all listeners have 5 top artists)
+```
+
+---
+
+## Verification
+
+```sql
 -- Sample Year-in-Review output
 SELECT * FROM v_listener_summary LIMIT 5;
 ```
 
 ### Sample Output Files
+
 ```
 05_serving/
 ├── reports/
-│   ├── listener_001_wrapped.json
-│   ├── listener_002_wrapped.json
+│   ├── {listener_id}_wrapped_2025.json
+│   ├── year_in_review_summary.csv
 │   └── ...
 ```

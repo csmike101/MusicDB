@@ -248,7 +248,41 @@ FROM silver_rejected_records
 GROUP BY source_table, rejection_reason;
 ```
 
+### Expected Row Counts
+
+| Table | Expected | Delta from Bronze | Notes |
+|-------|----------|-------------------|-------|
+| listeners | 50 | 0 | No quality issues to filter |
+| artists | 100 | 0 | Genre casing normalized, not filtered |
+| tracks | 1,000 | 0 | All artist FKs valid |
+| streams | ~99,500 | ~-1,500 | Duplicates (~999) + invalid FKs (~500) removed |
+| silver_rejected_records | ~500 | N/A | Invalid track_id references logged |
+
+### Reconciliation Check
+
+```sql
+-- Verify: bronze_streams - (duplicates + rejections) ≈ silver streams
+SELECT
+    (SELECT COUNT(*) FROM bronze_streams) AS bronze,
+    (SELECT COUNT(*) FROM streams) AS silver,
+    (SELECT COUNT(*) FROM silver_rejected_records) AS rejected,
+    (SELECT COUNT(*) FROM bronze_streams) -
+    (SELECT COUNT(*) FROM streams) -
+    (SELECT COUNT(*) FROM silver_rejected_records) AS deduplicated;
+-- Expected: deduplicated ≈ 999 (the removed duplicate rows)
+
+-- Verify no duplicates remain
+SELECT COUNT(*) - COUNT(DISTINCT stream_id) AS remaining_dupes FROM streams;
+-- Expected: 0
+
+-- Verify FK integrity
+SELECT COUNT(*) AS orphan_streams FROM streams s
+WHERE NOT EXISTS (SELECT 1 FROM tracks t WHERE t.track_id = s.track_id);
+-- Expected: 0
+```
+
 ### Actual Results
+
 | Table | Bronze Rows | Silver Rows | Difference |
 |-------|-------------|-------------|------------|
 | listeners | 50 | 50 | 0 (no issues) |
